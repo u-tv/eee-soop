@@ -57,12 +57,7 @@
         .delete-item { right: 8px; }
         .edit-item { right: 38px; background: #e4b53c; color: #000; }
         .admin-mode .delete-item, .admin-mode .edit-item { display: flex; }
-        .add-forms-container { background: #121212; border-radius: 24px; padding: 1rem; margin-bottom: 1.5rem; display: none; flex-direction: column; gap: 0.8rem; }
-        .admin-mode .add-forms-container { display: flex; }
-        .form-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-        .form-row input, .form-row select, .form-row textarea { padding: 8px 12px; border-radius: 30px; border: none; background: #2c2c2c; color: white; flex: 1; min-width: 120px; font-size: 0.8rem; }
-        .add-btn { background: #e4b53c; padding: 8px 16px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 0.8rem; }
-        .section-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+        /* Add forms moved to admin panel, so no separate containers on main page */
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
         .team-card { background: #111; border-radius: 24px; padding: 1rem; text-align: center; }
         .team-avatar { width: 70px; height: 70px; background: #2a2a2a; border-radius: 50%; margin: 0 auto 0.6rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 2px solid #e4b53c; }
@@ -75,8 +70,9 @@
         .time-slot { background: #2c2c2c; padding: 6px 12px; border-radius: 25px; font-size: 0.7rem; cursor: pointer; border: none; color: #fff; }
         .time-slot:hover, .time-slot.selected { background: #e4b53c; color: #000; }
         .modal, .login-modal, .admin-modal, .feedback-modal, .popup-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); justify-content: center; align-items: center; z-index: 2000; }
-        .modal-content, .login-content, .admin-content, .feedback-content, .popup-content { background: #1a1a1a; max-width: 450px; width: 90%; border-radius: 32px; padding: 1.5rem; max-height: 80vh; overflow-y: auto; }
+        .modal-content, .login-content, .admin-content, .feedback-content, .popup-content { background: #1a1a1a; max-width: 500px; width: 90%; border-radius: 32px; padding: 1.5rem; max-height: 80vh; overflow-y: auto; }
         .modal-content input, .login-content input, .admin-content input, .admin-content textarea, .feedback-content input, .feedback-content textarea, .feedback-content select, .popup-content input, .popup-content select, .popup-content textarea { width: 100%; margin: 8px 0; padding: 10px; border-radius: 30px; background: #2c2c2c; border: none; color: #fff; font-size: 0.85rem; }
+        .admin-section-title { font-size: 1.2rem; margin: 1rem 0 0.5rem; color: #e4b53c; border-left: 3px solid #e4b53c; padding-left: 10px; }
         .guide-section { background: #121212; border-radius: 24px; padding: 1rem; margin: 1rem 0; }
         .guide-step { display: flex; align-items: center; gap: 0.6rem; margin: 0.6rem 0; padding: 0.5rem; background: #1a1a1a; border-radius: 16px; flex-wrap: wrap; }
         .guide-number { width: 28px; height: 28px; background: #e4b53c; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem; }
@@ -95,12 +91,15 @@
         .review-text { font-size: 0.75rem; color: #ccc; }
         .review-name { font-size: 0.65rem; color: #888; margin-top: 0.2rem; }
         @media (min-width: 768px) { .menu-icon { display: none; } .desktop-nav { display: flex; } .container { max-width: 1200px; margin: 0 auto; } .page { padding: 80px 0 60px; } }
-        @media (max-width: 767px) { .team-grid { grid-template-columns: repeat(2,1fr); } .form-row { flex-direction: column; } .form-row input, .form-row select, .form-row textarea { width: 100%; } .services-grid, .products-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 767px) { .team-grid { grid-template-columns: repeat(2,1fr); } .services-grid, .products-grid { grid-template-columns: 1fr; } }
         .help-email { text-align: center; padding: 0.6rem; background: #1a1a1a; border-radius: 20px; margin-top: 0.8rem; font-size: 0.75rem; }
         .combos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
         .two-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 10px; }
         .popup-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
         .btn-secondary { background: #444; color: white; }
+        .form-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 10px; }
+        .form-row input, .form-row select, .form-row textarea { padding: 8px 12px; border-radius: 30px; border: none; background: #2c2c2c; color: white; flex: 1; min-width: 120px; font-size: 0.8rem; }
+        .add-btn { background: #e4b53c; padding: 8px 16px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 0.8rem; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -120,22 +119,20 @@
 <!-- HERO -->
 <section id="home" class="page hero-page"><div class="container hero-content"><h1 id="heroTitle">THAKUR'S<br>BARBER LOUNGE</h1><p id="heroSub">Premium Grooming | Royal Experience</p><button class="btn-gold" id="heroBookBtn">BOOK APPOINTMENT →</button></div></section>
 
-<!-- SERVICES (visible only after admin adds) -->
+<!-- SERVICES (only shows what admin added) -->
 <section id="services" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Our Services</h2></div>
-<div id="addServiceForm" class="add-forms-container"><h3>➕ Add New Service (Unlimited)</h3><div class="form-row"><input type="text" id="newServiceName" placeholder="Service Name *"><input type="text" id="newServicePrice" placeholder="Price *"><select id="newServiceIcon"><option value="fas fa-cut">✂️ Haircut</option><option value="fas fa-beard">🧔 Beard</option><option value="fas fa-bolt">⚡ Combo</option><option value="fas fa-child">👶 Kids</option><option value="fas fa-spa">💆 Spa</option></select><input type="text" id="newServiceDesc" placeholder="Description"></div><button id="addServiceBtn" class="add-btn">➕ ADD SERVICE</button></div>
 <div class="services-grid" id="servicesGrid"></div></div></section>
 
-<!-- PRODUCTS (visible only after admin adds) -->
+<!-- PRODUCTS (only shows what admin added) -->
 <section id="products" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Premium Products</h2></div>
-<div id="addProductForm" class="add-forms-container"><h3>🛍️ Add New Product (Unlimited)</h3><div class="form-row"><input type="text" id="newProductName" placeholder="Product Name *"><input type="text" id="newProductPrice" placeholder="Price *"><input type="text" id="newProductQuantity" placeholder="Quantity (e.g., 100ml)"><input type="text" id="newProductDiscount" placeholder="Discount (e.g., 10%)"><select id="newProductIcon"><option value="fas fa-jar">🧴 Wax/Gel</option><option value="fas fa-oil-can">🧴 Oil</option><option value="fas fa-cut">✂️ Tools</option></select><input type="text" id="newProductDesc" placeholder="Description"></div><button id="addProductBtn" class="add-btn">🛍️ ADD PRODUCT</button></div>
 <div class="products-grid" id="productsGrid"></div></div></section>
 
-<!-- COMBOS, TEAM, GALLERY (fixed) -->
+<!-- FIXED SECTIONS -->
 <section id="combos" class="page"><div class="container"><h2 class="section-title">Exclusive Combos</h2><div id="combosGrid" class="combos-container"></div></div></section>
 <section id="team" class="page"><div class="container"><h2 class="section-title">Master Barbers</h2><div class="team-grid" id="teamGrid"></div></div></section>
 <section id="gallery" class="page"><div class="container"><h2 class="section-title">Our Work</h2><div class="work-gallery" id="galleryGrid"></div></div></section>
 <section id="feedback" class="page"><div class="container"><h2 class="section-title">Customer Reviews</h2><div id="reviewsList" class="reviews-container"></div><button id="giveFeedbackBtn" class="btn-gold" style="margin-top:0.8rem; padding:8px 20px;">📝 Give Your Feedback</button></div></section>
-<section id="guide" class="page"><div class="container"><h2 class="section-title">📖 How To Use</h2><div class="guide-section"><h3>👤 For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK APPOINTMENT" in center</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Service, Date & Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP"</div></div><div class="guide-step"><div class="guide-number">4</div><div>Give feedback in Reviews</div></div></div><div class="help-email"><i class="fas fa-envelope"></i> <strong>24/7 Support:</strong> <a href="mailto:gurubhi1995@gmail.com">gurubhi1995@gmail.com</a><br><small>Response in 2-3 days</small></div></div></section>
+<section id="guide" class="page"><div class="container"><h2 class="section-title">📖 How To Use</h2><div class="guide-section"><h3>👤 For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK APPOINTMENT" in center</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Service, Date & Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP"</div></div><div class="guide-step"><div class="guide-number">4</div><div>Give feedback in Reviews section</div></div></div><div class="help-email"><i class="fas fa-envelope"></i> <strong>24/7 Support:</strong> <a href="mailto:gurubhi1995@gmail.com">gurubhi1995@gmail.com</a><br><small>Response in 2-3 days</small></div></div></section>
 <section id="hours" class="page"><div class="container"><h2 class="section-title">Working Hours</h2><div><span class="live-status" id="liveStatus">🔴 Checking...</span></div><div class="hours-list" id="hoursList"></div></div></section>
 <section id="contact" class="page"><div class="container"><h2 class="section-title">Contact Us</h2><div class="contact-grid" id="contactGrid"></div><div class="social-icons" id="socialIcons"></div></div></section>
 
@@ -151,8 +148,21 @@
 <!-- LOGIN MODAL (Owner) -->
 <div id="loginModal" class="login-modal"><div class="login-content"><span id="closeLoginModal" style="float:right; font-size:24px; cursor:pointer;">&times;</span><h2>🔐 Owner Login</h2><div id="loginFormDiv"><input type="text" id="loginUsername" placeholder="Username"><input type="password" id="loginPassword" placeholder="Password"><button id="loginBtn" class="save-btn">LOGIN</button><button id="forgotBtn" style="background:#444;" class="save-btn">FORGOT PASSWORD?</button></div><div id="forgotFormDiv" style="display:none;"><input type="password" id="masterPasswordInput" placeholder="Master Password"><input type="password" id="newPasswordInput" placeholder="New Password"><input type="password" id="confirmPasswordInput" placeholder="Confirm Password"><button id="resetPasswordBtn" class="save-btn">RESET PASSWORD</button><button id="backToLoginBtn" style="background:#444;" class="save-btn">BACK TO LOGIN</button></div></div></div>
 
-<!-- ADMIN MODAL (Owner Panel) -->
-<div id="adminModal" class="admin-modal"><div class="admin-content"><span id="closeAdminModal" style="float:right; font-size:24px; cursor:pointer;">&times;</span><h2>⚙️ Owner Panel</h2><div><label>Shop Name:</label><input type="text" id="updateShopName"><label>Hero Title:</label><input type="text" id="updateHeroTitle"><label>Address:</label><textarea id="updateAddress" rows="2"></textarea><label>Phone:</label><input type="text" id="updatePhone"><label>WhatsApp (digits):</label><input type="text" id="updateWhatsapp"><label>Email:</label><input type="text" id="updateEmail"><label>Hours:</label><textarea id="updateHours" rows="2"></textarea><label>Footer:</label><input type="text" id="updateFooter"><h3>Social Media</h3><label>Instagram URL:</label><input type="text" id="updateInstagram"><label>Facebook URL:</label><input type="text" id="updateFacebook"><button id="saveAdminDataBtn" class="save-btn">💾 SAVE ALL CHANGES</button><button id="logoutAdminBtn" style="background:#c62828;" class="save-btn">🚪 LOGOUT</button></div></div></div>
+<!-- ADMIN MODAL (Owner Panel) - Now includes Add/Delete/Edit Services & Products -->
+<div id="adminModal" class="admin-modal"><div class="admin-content"><span id="closeAdminModal" style="float:right; font-size:24px; cursor:pointer;">&times;</span><h2>⚙️ Owner Panel</h2>
+<div><label>Shop Name:</label><input type="text" id="updateShopName"><label>Hero Title:</label><input type="text" id="updateHeroTitle"><label>Address:</label><textarea id="updateAddress" rows="2"></textarea><label>Phone:</label><input type="text" id="updatePhone"><label>WhatsApp (digits):</label><input type="text" id="updateWhatsapp"><label>Email:</label><input type="text" id="updateEmail"><label>Hours:</label><textarea id="updateHours" rows="2"></textarea><label>Footer:</label><input type="text" id="updateFooter"><h3>Social Media</h3><label>Instagram URL:</label><input type="text" id="updateInstagram"><label>Facebook URL:</label><input type="text" id="updateFacebook">
+    
+    <div class="admin-section-title">➕ Manage Services (Unlimited)</div>
+    <div class="form-row"><input type="text" id="newServiceName" placeholder="Service Name *"><input type="text" id="newServicePrice" placeholder="Price *"><select id="newServiceIcon"><option value="fas fa-cut">✂️ Haircut</option><option value="fas fa-beard">🧔 Beard</option><option value="fas fa-bolt">⚡ Combo</option><option value="fas fa-child">👶 Kids</option><option value="fas fa-spa">💆 Spa</option></select><input type="text" id="newServiceDesc" placeholder="Description"></div>
+    <button id="addServiceBtn" class="add-btn">➕ ADD SERVICE</button>
+    
+    <div class="admin-section-title">🛍️ Manage Products (Unlimited)</div>
+    <div class="form-row"><input type="text" id="newProductName" placeholder="Product Name *"><input type="text" id="newProductPrice" placeholder="Price *"><input type="text" id="newProductQuantity" placeholder="Quantity (e.g., 100ml)"><input type="text" id="newProductDiscount" placeholder="Discount (e.g., 10%)"><select id="newProductIcon"><option value="fas fa-jar">🧴 Wax/Gel</option><option value="fas fa-oil-can">🧴 Oil</option><option value="fas fa-cut">✂️ Tools</option></select><input type="text" id="newProductDesc" placeholder="Description"></div>
+    <button id="addProductBtn" class="add-btn">🛍️ ADD PRODUCT</button>
+    
+    <button id="saveAdminDataBtn" class="save-btn">💾 SAVE ALL CHANGES</button>
+    <button id="logoutAdminBtn" style="background:#c62828;" class="save-btn">🚪 LOGOUT</button>
+</div></div></div>
 
 <!-- ADD MORE POPUP -->
 <div id="addMorePopup" class="popup-modal"><div class="popup-content"><h3 id="popupTitle">✅ Item Added!</h3><p id="popupMessage">Do you want to add another?</p><div class="popup-buttons"><button id="popupAddMoreBtn" class="btn-gold">➕ ADD MORE</button><button id="popupCloseBtn" class="btn-gold btn-secondary">CLOSE</button></div></div></div>
@@ -160,9 +170,10 @@
 <script>
     // ============================================
     // COMPLETE SYSTEM - ADMIN ONLY CAN ADD SERVICES/PRODUCTS
-    // CUSTOMER SEES ONLY AFTER ADMIN ADDS
-    // TOP "BOOK" BUTTON REMOVED - ONLY CENTER CTA
-    // SCREEN LOCK, ZOOM DISABLED, RAZOR LOGO
+    // Add forms are inside ADMIN PANEL (Owner Panel)
+    // Customer sees only after admin adds
+    // Top "BOOK" button removed - only center CTA
+    // Screen lock, zoom disabled, razor logo
     // Owner: dhamtan / Thakur1995@ | Master: Thakur9728199145
     // ============================================
     
@@ -207,8 +218,8 @@
     let pendingAddCallback = null;
     
     function generateId() { return Date.now() + Math.random().toString(36).substr(2, 8); }
-    function loadData() { let s = localStorage.getItem('thakurFinalV5'); if(s) siteData = JSON.parse(s); else saveData(); }
-    function saveData() { localStorage.setItem('thakurFinalV5', JSON.stringify(siteData)); }
+    function loadData() { let s = localStorage.getItem('thakurFinalV6'); if(s) siteData = JSON.parse(s); else saveData(); }
+    function saveData() { localStorage.setItem('thakurFinalV6', JSON.stringify(siteData)); }
     function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m; }); }
     
     function showAddMorePopup(type, callback) {
@@ -295,6 +306,7 @@
     window.bookCombo = function(service) { document.getElementById('userService').value = service; openBookingModal(); };
     window.buyProduct = function(product) { window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20want%20to%20buy%20${encodeURIComponent(product)}`, '_blank'); };
     
+    // Add Service (unlimited with popup)
     function addServiceItem() {
         let n = document.getElementById('newServiceName').value.trim();
         let p = document.getElementById('newServicePrice').value.trim();
@@ -310,6 +322,7 @@
     }
     document.getElementById('addServiceBtn').onclick = () => { if(!adminMode) return; if(addServiceItem()) showAddMorePopup('service', addServiceItem); };
     
+    // Add Product (unlimited with popup)
     function addProductItem() {
         let n = document.getElementById('newProductName').value.trim();
         let p = document.getElementById('newProductPrice').value.trim();
@@ -329,6 +342,7 @@
     }
     document.getElementById('addProductBtn').onclick = () => { if(!adminMode) return; if(addProductItem()) showAddMorePopup('product', addProductItem); };
     
+    // Popup handlers
     document.getElementById('popupAddMoreBtn').onclick = () => {
         document.getElementById('addMorePopup').style.display = 'none';
         if(pendingAddType === 'service') document.getElementById('newServiceName').focus();
