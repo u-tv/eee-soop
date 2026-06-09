@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +37,7 @@
         .desktop-nav a { color: #fff; text-decoration: none; font-size: 0.7rem; font-weight: 500; white-space: nowrap; }
         .desktop-nav a:hover { color: #e4b53c; }
         .admin-btn { background: #2c2c2c; padding: 5px 12px; border-radius: 30px; color: #e4b53c; cursor: pointer; border: none; font-size: 0.7rem; }
-        .book-now-btn { background: #e4b53c; padding: 5px 14px; border-radius: 40px; color: #000; font-weight: 700; cursor: pointer; border: none; font-size: 0.7rem; }
+        /* TOP BOOK BUTTON REMOVED */
         .mobile-menu { display: none; flex-direction: column; background: #0a0a0a; position: absolute; top: 55px; left: 0; width: 100%; padding: 1rem; gap: 0.8rem; border-bottom: 1px solid #e4b53c; z-index: 999; }
         .mobile-menu.show { display: flex; }
         .mobile-menu a { color: #fff; text-decoration: none; padding: 5px 0; font-size: 0.85rem; }
@@ -112,42 +113,30 @@
         <a href="#combos">COMBOS</a> <a href="#team">BARBERS</a> <a href="#gallery">GALLERY</a>
         <a href="#feedback">REVIEWS</a> <a href="#guide">GUIDE</a> <a href="#hours">HOURS</a> <a href="#contact">CONTACT</a>
     </div>
-    <div><button class="admin-btn" id="adminPanelBtn"><i class="fas fa-shield-alt"></i> ADMIN</button><button class="book-now-btn" id="bookBtn"><i class="fas fa-calendar"></i> BOOK</button></div>
+    <div><button class="admin-btn" id="adminPanelBtn"><i class="fas fa-shield-alt"></i> ADMIN</button></div>
 </div>
 <div class="mobile-menu" id="mobileMenu"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#products">PRODUCTS</a><a href="#combos">COMBOS</a><a href="#team">BARBERS</a><a href="#gallery">GALLERY</a><a href="#feedback">REVIEWS</a><a href="#guide">GUIDE</a><a href="#hours">HOURS</a><a href="#contact">CONTACT</a></div>
 
 <!-- HERO -->
 <section id="home" class="page hero-page"><div class="container hero-content"><h1 id="heroTitle">THAKUR'S<br>BARBER LOUNGE</h1><p id="heroSub">Premium Grooming | Royal Experience</p><button class="btn-gold" id="heroBookBtn">BOOK APPOINTMENT →</button></div></section>
 
-<!-- SERVICES -->
+<!-- SERVICES (visible only after admin adds) -->
 <section id="services" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Our Services</h2></div>
 <div id="addServiceForm" class="add-forms-container"><h3>➕ Add New Service (Unlimited)</h3><div class="form-row"><input type="text" id="newServiceName" placeholder="Service Name *"><input type="text" id="newServicePrice" placeholder="Price *"><select id="newServiceIcon"><option value="fas fa-cut">✂️ Haircut</option><option value="fas fa-beard">🧔 Beard</option><option value="fas fa-bolt">⚡ Combo</option><option value="fas fa-child">👶 Kids</option><option value="fas fa-spa">💆 Spa</option></select><input type="text" id="newServiceDesc" placeholder="Description"></div><button id="addServiceBtn" class="add-btn">➕ ADD SERVICE</button></div>
 <div class="services-grid" id="servicesGrid"></div></div></section>
 
-<!-- PRODUCTS -->
+<!-- PRODUCTS (visible only after admin adds) -->
 <section id="products" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Premium Products</h2></div>
 <div id="addProductForm" class="add-forms-container"><h3>🛍️ Add New Product (Unlimited)</h3><div class="form-row"><input type="text" id="newProductName" placeholder="Product Name *"><input type="text" id="newProductPrice" placeholder="Price *"><input type="text" id="newProductQuantity" placeholder="Quantity (e.g., 100ml)"><input type="text" id="newProductDiscount" placeholder="Discount (e.g., 10%)"><select id="newProductIcon"><option value="fas fa-jar">🧴 Wax/Gel</option><option value="fas fa-oil-can">🧴 Oil</option><option value="fas fa-cut">✂️ Tools</option></select><input type="text" id="newProductDesc" placeholder="Description"></div><button id="addProductBtn" class="add-btn">🛍️ ADD PRODUCT</button></div>
 <div class="products-grid" id="productsGrid"></div></div></section>
 
-<!-- COMBOS -->
+<!-- COMBOS, TEAM, GALLERY (fixed) -->
 <section id="combos" class="page"><div class="container"><h2 class="section-title">Exclusive Combos</h2><div id="combosGrid" class="combos-container"></div></div></section>
-
-<!-- TEAM -->
 <section id="team" class="page"><div class="container"><h2 class="section-title">Master Barbers</h2><div class="team-grid" id="teamGrid"></div></div></section>
-
-<!-- GALLERY -->
 <section id="gallery" class="page"><div class="container"><h2 class="section-title">Our Work</h2><div class="work-gallery" id="galleryGrid"></div></div></section>
-
-<!-- FEEDBACK -->
 <section id="feedback" class="page"><div class="container"><h2 class="section-title">Customer Reviews</h2><div id="reviewsList" class="reviews-container"></div><button id="giveFeedbackBtn" class="btn-gold" style="margin-top:0.8rem; padding:8px 20px;">📝 Give Your Feedback</button></div></section>
-
-<!-- GUIDE -->
-<section id="guide" class="page"><div class="container"><h2 class="section-title">📖 How To Use</h2><div class="guide-section"><h3>👤 For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK" or "BOOK APPOINTMENT"</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Service, Date & Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP"</div></div><div class="guide-step"><div class="guide-number">4</div><div>Give your feedback in Reviews section</div></div></div><div class="help-email"><i class="fas fa-envelope"></i> <strong>24/7 Support:</strong> <a href="mailto:gurubhi1995@gmail.com">gurubhi1995@gmail.com</a><br><small>Response in 2-3 days</small></div></div></section>
-
-<!-- HOURS -->
+<section id="guide" class="page"><div class="container"><h2 class="section-title">📖 How To Use</h2><div class="guide-section"><h3>👤 For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK APPOINTMENT" in center</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Service, Date & Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP"</div></div><div class="guide-step"><div class="guide-number">4</div><div>Give feedback in Reviews</div></div></div><div class="help-email"><i class="fas fa-envelope"></i> <strong>24/7 Support:</strong> <a href="mailto:gurubhi1995@gmail.com">gurubhi1995@gmail.com</a><br><small>Response in 2-3 days</small></div></div></section>
 <section id="hours" class="page"><div class="container"><h2 class="section-title">Working Hours</h2><div><span class="live-status" id="liveStatus">🔴 Checking...</span></div><div class="hours-list" id="hoursList"></div></div></section>
-
-<!-- CONTACT -->
 <section id="contact" class="page"><div class="container"><h2 class="section-title">Contact Us</h2><div class="contact-grid" id="contactGrid"></div><div class="social-icons" id="socialIcons"></div></div></section>
 
 <footer><p id="footerText">© 2026 THAKUR'S BARBER LOUNGE — All Rights Reserved</p></footer>
@@ -159,20 +148,22 @@
 <!-- FEEDBACK MODAL -->
 <div id="feedbackModal" class="feedback-modal"><div class="feedback-content"><span id="closeFeedbackModal" style="float:right; font-size:24px; cursor:pointer;">&times;</span><h2>📝 Share Your Experience</h2><form id="feedbackForm"><input type="text" id="customerName" placeholder="Your Name *" required><select id="rating" required><option value="">Select Rating</option><option value="5">⭐⭐⭐⭐⭐ - Excellent</option><option value="4">⭐⭐⭐⭐ - Good</option><option value="3">⭐⭐⭐ - Average</option><option value="2">⭐⭐ - Poor</option><option value="1">⭐ - Very Bad</option></select><textarea id="reviewText" rows="3" placeholder="Your review *" required></textarea><button type="submit" class="save-btn">SUBMIT REVIEW</button></form></div></div>
 
-<!-- LOGIN MODAL -->
+<!-- LOGIN MODAL (Owner) -->
 <div id="loginModal" class="login-modal"><div class="login-content"><span id="closeLoginModal" style="float:right; font-size:24px; cursor:pointer;">&times;</span><h2>🔐 Owner Login</h2><div id="loginFormDiv"><input type="text" id="loginUsername" placeholder="Username"><input type="password" id="loginPassword" placeholder="Password"><button id="loginBtn" class="save-btn">LOGIN</button><button id="forgotBtn" style="background:#444;" class="save-btn">FORGOT PASSWORD?</button></div><div id="forgotFormDiv" style="display:none;"><input type="password" id="masterPasswordInput" placeholder="Master Password"><input type="password" id="newPasswordInput" placeholder="New Password"><input type="password" id="confirmPasswordInput" placeholder="Confirm Password"><button id="resetPasswordBtn" class="save-btn">RESET PASSWORD</button><button id="backToLoginBtn" style="background:#444;" class="save-btn">BACK TO LOGIN</button></div></div></div>
 
-<!-- ADMIN MODAL -->
+<!-- ADMIN MODAL (Owner Panel) -->
 <div id="adminModal" class="admin-modal"><div class="admin-content"><span id="closeAdminModal" style="float:right; font-size:24px; cursor:pointer;">&times;</span><h2>⚙️ Owner Panel</h2><div><label>Shop Name:</label><input type="text" id="updateShopName"><label>Hero Title:</label><input type="text" id="updateHeroTitle"><label>Address:</label><textarea id="updateAddress" rows="2"></textarea><label>Phone:</label><input type="text" id="updatePhone"><label>WhatsApp (digits):</label><input type="text" id="updateWhatsapp"><label>Email:</label><input type="text" id="updateEmail"><label>Hours:</label><textarea id="updateHours" rows="2"></textarea><label>Footer:</label><input type="text" id="updateFooter"><h3>Social Media</h3><label>Instagram URL:</label><input type="text" id="updateInstagram"><label>Facebook URL:</label><input type="text" id="updateFacebook"><button id="saveAdminDataBtn" class="save-btn">💾 SAVE ALL CHANGES</button><button id="logoutAdminBtn" style="background:#c62828;" class="save-btn">🚪 LOGOUT</button></div></div></div>
 
-<!-- POPUP FOR ADD MORE (Product/Service) -->
+<!-- ADD MORE POPUP -->
 <div id="addMorePopup" class="popup-modal"><div class="popup-content"><h3 id="popupTitle">✅ Item Added!</h3><p id="popupMessage">Do you want to add another?</p><div class="popup-buttons"><button id="popupAddMoreBtn" class="btn-gold">➕ ADD MORE</button><button id="popupCloseBtn" class="btn-gold btn-secondary">CLOSE</button></div></div></div>
 
 <script>
     // ============================================
-    // COMPLETE SYSTEM - UNLIMITED ADD PRODUCTS/SERVICES
+    // COMPLETE SYSTEM - ADMIN ONLY CAN ADD SERVICES/PRODUCTS
+    // CUSTOMER SEES ONLY AFTER ADMIN ADDS
+    // TOP "BOOK" BUTTON REMOVED - ONLY CENTER CTA
+    // SCREEN LOCK, ZOOM DISABLED, RAZOR LOGO
     // Owner: dhamtan / Thakur1995@ | Master: Thakur9728199145
-    // SCREEN LOCK (NO ZOOM) + PROFESSIONAL LOGO + MOBILE FIT
     // ============================================
     
     let siteData = {
@@ -185,14 +176,8 @@
         email: "gurubhi1995@gmail.com",
         hours: "Monday - Friday: 10:00 - 20:00\nSaturday: 10:00 - 19:00\nSunday: 12:00 - 17:00",
         footerText: "© 2026 THAKUR'S BARBER LOUNGE — All Rights Reserved",
-        services: [
-            { id: "sv1", name: "Signature Haircut", icon: "fas fa-cut", price: "$350", desc: "Precision haircut with royal styling" },
-            { id: "sv2", name: "Royal Beard", icon: "fas fa-beard", price: "$250", desc: "Hot towel + premium shaping" }
-        ],
-        products: [
-            { id: "pr1", name: "Gold Matte Wax", icon: "fas fa-jar", price: "$25", quantity: "100g", discount: "10%", desc: "Strong hold" },
-            { id: "pr2", name: "Beard Oil", icon: "fas fa-oil-can", price: "$18", quantity: "50ml", discount: "5%", desc: "Softens beard" }
-        ],
+        services: [],   // START EMPTY - ADMIN WILL ADD
+        products: [],   // START EMPTY - ADMIN WILL ADD
         combos: [
             { name: "Executive Combo", price: "$450", desc: "Haircut + Beard", popular: true },
             { name: "Royal Combo", price: "$650", desc: "Haircut + Beard + Hot Towel", popular: false }
@@ -207,9 +192,7 @@
             "https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=400",
             "https://images.pexels.com/photos/2983469/pexels-photo-2983469.jpeg?auto=compress&cs=tinysrgb&w=400"
         ],
-        reviews: [
-            { id: "rev1", name: "Rajesh Kumar", rating: 5, text: "Excellent service!", date: "2024-01-15" }
-        ],
+        reviews: [],
         social: { instagram: "", facebook: "" }
     };
     
@@ -224,8 +207,8 @@
     let pendingAddCallback = null;
     
     function generateId() { return Date.now() + Math.random().toString(36).substr(2, 8); }
-    function loadData() { let s = localStorage.getItem('thakurFinalV4'); if(s) siteData = JSON.parse(s); else saveData(); }
-    function saveData() { localStorage.setItem('thakurFinalV4', JSON.stringify(siteData)); }
+    function loadData() { let s = localStorage.getItem('thakurFinalV5'); if(s) siteData = JSON.parse(s); else saveData(); }
+    function saveData() { localStorage.setItem('thakurFinalV5', JSON.stringify(siteData)); }
     function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m; }); }
     
     function showAddMorePopup(type, callback) {
@@ -249,30 +232,43 @@
         document.getElementById('heroSub').innerText = siteData.heroSub;
         document.getElementById('footerText').innerHTML = siteData.footerText;
         
+        // Services (only show if admin added any)
         let sHtml = '';
-        siteData.services.forEach(s => { sHtml += `<div class="service-card"><button class="delete-item" onclick="deleteItem('service','${s.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('service','${s.id}')"><i class="fas fa-edit"></i></button><i class="${s.icon}"></i><h3>${escapeHtml(s.name)}</h3><p>${escapeHtml(s.desc)}</p><div class="price-tag">${escapeHtml(s.price)}</div></div>`; });
-        document.getElementById('servicesGrid').innerHTML = sHtml || '<p style="text-align:center;opacity:0.6;">No services yet. Admin can add unlimited.</p>';
+        if(siteData.services.length === 0) sHtml = '<p style="text-align:center;opacity:0.6;">No services added yet. Admin will add soon.</p>';
+        else {
+            siteData.services.forEach(s => { sHtml += `<div class="service-card"><button class="delete-item" onclick="deleteItem('service','${s.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('service','${s.id}')"><i class="fas fa-edit"></i></button><i class="${s.icon}"></i><h3>${escapeHtml(s.name)}</h3><p>${escapeHtml(s.desc)}</p><div class="price-tag">${escapeHtml(s.price)}</div></div>`; });
+        }
+        document.getElementById('servicesGrid').innerHTML = sHtml;
         
+        // Products (only show if admin added any)
         let pHtml = '';
-        siteData.products.forEach(p => { pHtml += `<div class="product-card"><button class="delete-item" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('product','${p.id}')"><i class="fas fa-edit"></i></button><i class="${p.icon}"></i><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="price-tag">${escapeHtml(p.price)}</div><div class="quantity-badge"><i class="fas fa-box"></i> ${escapeHtml(p.quantity || 'In Stock')} | ${escapeHtml(p.discount || '0%')} off</div><button class="btn-gold" style="margin-top:8px;padding:4px 12px;font-size:0.7rem;" onclick="buyProduct('${escapeHtml(p.name)} - ${escapeHtml(p.price)}')">Buy via WhatsApp</button></div>`; });
-        document.getElementById('productsGrid').innerHTML = pHtml || '<p style="text-align:center;opacity:0.6;">No products yet. Admin can add unlimited.</p>';
+        if(siteData.products.length === 0) pHtml = '<p style="text-align:center;opacity:0.6;">No products added yet. Admin will add soon.</p>';
+        else {
+            siteData.products.forEach(p => { pHtml += `<div class="product-card"><button class="delete-item" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('product','${p.id}')"><i class="fas fa-edit"></i></button><i class="${p.icon}"></i><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="price-tag">${escapeHtml(p.price)}</div><div class="quantity-badge"><i class="fas fa-box"></i> ${escapeHtml(p.quantity || 'In Stock')} | ${escapeHtml(p.discount || '0%')} off</div><button class="btn-gold" style="margin-top:8px;padding:4px 12px;font-size:0.7rem;" onclick="buyProduct('${escapeHtml(p.name)} - ${escapeHtml(p.price)}')">Buy via WhatsApp</button></div>`; });
+        }
+        document.getElementById('productsGrid').innerHTML = pHtml;
         
+        // Combos
         let cHtml = '';
         siteData.combos.forEach(c => { cHtml += `<div class="combo-card"><span>${c.popular ? '⭐ POPULAR' : '🔥'}</span><h3>${escapeHtml(c.name)}</h3><div class="combo-price">${escapeHtml(c.price)}</div><p>${escapeHtml(c.desc)}</p><button class="btn-gold" style="margin-top:8px;padding:4px 12px;" onclick="bookCombo('${escapeHtml(c.name)} ${escapeHtml(c.price)}')">Book Now</button></div>`; });
         document.getElementById('combosGrid').innerHTML = cHtml;
         
+        // Team
         let tHtml = '';
         siteData.team.forEach(t => { tHtml += `<div class="team-card"><div class="team-avatar"><i class="fas fa-user"></i></div><h3>${escapeHtml(t.name)}</h3><p>${escapeHtml(t.role)}</p><span>${t.rating}</span></div>`; });
         document.getElementById('teamGrid').innerHTML = tHtml;
         
+        // Gallery
         let gHtml = '';
         siteData.gallery.forEach((img, idx) => { gHtml += `<div class="work-card"><img src="${img}" alt="Work" loading="lazy" onerror="this.src='https://images.pexels.com/photos/3998424/pexels-photo-3998424.jpeg?auto=compress&cs=tinysrgb&w=400'"></div>`; });
         document.getElementById('galleryGrid').innerHTML = gHtml;
         
+        // Hours
         let hHtml = '';
         siteData.hours.split('\n').forEach(line => { if(line.trim()) { let parts = line.split(':'); hHtml += `<p><span>${escapeHtml(parts[0])}</span><span>${escapeHtml(parts[1] || '')}</span></p>`; } });
         document.getElementById('hoursList').innerHTML = hHtml;
         
+        // Contact
         document.getElementById('contactGrid').innerHTML = `<div class="contact-card"><i class="fas fa-map-pin"></i><h3>Address</h3><p>${escapeHtml(siteData.address)}</p></div><div class="contact-card"><i class="fas fa-phone"></i><h3>Phone</h3><p>${escapeHtml(siteData.phone)}</p><button onclick="window.location.href='tel:${siteData.phone}'" style="background:#e4b53c;padding:4px 12px;border-radius:30px;margin-top:6px;">Call</button></div><div class="contact-card"><i class="fas fa-clock"></i><h3>Hours</h3><p>${escapeHtml(siteData.hours.replace(/\n/g,'<br>'))}</p></div><div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>${escapeHtml(siteData.email)}</p></div>`;
         
         let socialHtml = '';
@@ -299,7 +295,6 @@
     window.bookCombo = function(service) { document.getElementById('userService').value = service; openBookingModal(); };
     window.buyProduct = function(product) { window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20want%20to%20buy%20${encodeURIComponent(product)}`, '_blank'); };
     
-    // Add Service with Add More popup
     function addServiceItem() {
         let n = document.getElementById('newServiceName').value.trim();
         let p = document.getElementById('newServicePrice').value.trim();
@@ -315,7 +310,6 @@
     }
     document.getElementById('addServiceBtn').onclick = () => { if(!adminMode) return; if(addServiceItem()) showAddMorePopup('service', addServiceItem); };
     
-    // Add Product with Add More popup
     function addProductItem() {
         let n = document.getElementById('newProductName').value.trim();
         let p = document.getElementById('newProductPrice').value.trim();
@@ -335,14 +329,10 @@
     }
     document.getElementById('addProductBtn').onclick = () => { if(!adminMode) return; if(addProductItem()) showAddMorePopup('product', addProductItem); };
     
-    // Popup handlers
     document.getElementById('popupAddMoreBtn').onclick = () => {
         document.getElementById('addMorePopup').style.display = 'none';
-        if(pendingAddType === 'service') {
-            document.getElementById('newServiceName').focus();
-        } else if(pendingAddType === 'product') {
-            document.getElementById('newProductName').focus();
-        }
+        if(pendingAddType === 'service') document.getElementById('newServiceName').focus();
+        else if(pendingAddType === 'product') document.getElementById('newProductName').focus();
     };
     document.getElementById('popupCloseBtn').onclick = () => { document.getElementById('addMorePopup').style.display = 'none'; pendingAddType = null; };
     
@@ -364,7 +354,7 @@
             document.getElementById('updateWhatsapp').value=siteData.whatsapp; document.getElementById('updateEmail').value=siteData.email;
             document.getElementById('updateHours').value=siteData.hours; document.getElementById('updateFooter').value=siteData.footerText;
             document.getElementById('updateInstagram').value=siteData.social.instagram||''; document.getElementById('updateFacebook').value=siteData.social.facebook||'';
-            adminModalElem.style.display='flex'; renderWebsite(); alert("✅ Welcome Owner! Unlimited add enabled.");
+            adminModalElem.style.display='flex'; renderWebsite(); alert("✅ Welcome Owner! You can now add unlimited services/products.");
         } else alert("❌ Invalid credentials");
     };
     
@@ -401,7 +391,7 @@
     // Booking
     const modal=document.getElementById('bookingModal');
     function openBookingModal(){ renderTimeSlots(); selectedTimeSlot=""; modal.style.display='flex'; }
-    document.getElementById('bookBtn').onclick=openBookingModal; document.getElementById('heroBookBtn').onclick=openBookingModal;
+    document.getElementById('heroBookBtn').onclick=openBookingModal;
     document.getElementById('closeModal').onclick=()=>modal.style.display='none';
     window.onclick=(e)=>{ if(e.target===modal)modal.style.display='none'; if(e.target===loginModal)loginModal.style.display='none'; if(e.target===adminModalElem)adminModalElem.style.display='none'; if(e.target===feedbackModal)feedbackModal.style.display='none'; if(e.target===document.getElementById('addMorePopup'))document.getElementById('addMorePopup').style.display='none'; };
     document.getElementById('whatsappFab').onclick=()=>window.open(`https://wa.me/${siteData.whatsapp}?text=Hello`,'_blank');
@@ -421,3 +411,4 @@
 </script>
 </body>
 </html>
+```
