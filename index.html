@@ -1,17 +1,15 @@
-Here is the complete, professional Pro Level website for Calicutz Barber Shop with a secure Admin Panel (PIN: 9728199145) that allows you to update all site details in real-time with auto-sync.
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>Calicutz Pro | Premium Barber Experience</title>
+    <title>Thakur's Barber Lounge | Professional Grooming</title>
     <!-- PWA Meta -->
     <meta name="theme-color" content="#0a0a0a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Calicutz Pro">
+    <meta name="apple-mobile-web-app-title" content="Thakur Barber">
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -25,412 +23,361 @@ Here is the complete, professional Pro Level website for Calicutz Barber Shop wi
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #111; }
         ::-webkit-scrollbar-thumb { background: #e4b53c; border-radius: 10px; }
 
-        /* Header */
         .sticky-header {
-            position: sticky; top: 0; width: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(16px);
-            z-index: 1000; padding: 0.8rem 5%; border-bottom: 1px solid rgba(228,181,60,0.3);
+            position: sticky; top: 0; width: 100%; background: rgba(0,0,0,0.96); backdrop-filter: blur(16px);
+            z-index: 1000; padding: 0.7rem 4%; border-bottom: 1px solid rgba(228,181,60,0.3);
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo h2 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: clamp(1.3rem,5vw,1.8rem); background: linear-gradient(135deg,#f3bc5c,#c68e1a); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .menu-icon { font-size: 1.6rem; cursor: pointer; color: #e4b53c; display: block; }
-        .desktop-nav { display: none; gap: 1.8rem; align-items: center; }
+        .logo h2 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: clamp(1.2rem,5vw,1.6rem); background: linear-gradient(135deg,#f3bc5c,#c68e1a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .menu-icon { font-size: 1.5rem; cursor: pointer; color: #e4b53c; display: block; }
+        .desktop-nav { display: none; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
         .desktop-nav a { color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: 0.2s; }
         .desktop-nav a:hover { color: #e4b53c; }
-        .admin-btn { background: #2c2c2c; padding: 6px 16px; border-radius: 30px; color: #e4b53c !important; }
-        .book-now-btn { background: #e4b53c; padding: 8px 22px; border-radius: 40px; color: #000; font-weight: 700; cursor: pointer; border: none; }
-        .mobile-menu { display: none; flex-direction: column; background: #0a0a0a; position: absolute; top: 65px; left: 0; width: 100%; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid #e4b53c; z-index: 999; }
+        .admin-btn { background: #2c2c2c; padding: 6px 16px; border-radius: 30px; color: #e4b53c !important; cursor: pointer; border: none; font-size: 0.8rem; }
+        .book-now-btn { background: #e4b53c; padding: 8px 20px; border-radius: 40px; color: #000; font-weight: 700; cursor: pointer; border: none; }
+        .mobile-menu { display: none; flex-direction: column; background: #0a0a0a; position: absolute; top: 60px; left: 0; width: 100%; padding: 1.2rem; gap: 1rem; border-bottom: 1px solid #e4b53c; z-index: 999; }
         .mobile-menu.show { display: flex; }
-        .mobile-menu a { color: #fff; text-decoration: none; padding: 8px 0; }
-
-        /* Pages */
-        .page { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 90px 5% 70px; border-bottom: 1px solid rgba(255,215,140,0.08); }
+        .mobile-menu a { color: #fff; text-decoration: none; padding: 6px 0; }
+        .page { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 80px 4% 60px; border-bottom: 1px solid rgba(255,215,140,0.08); }
         .container { max-width: 1300px; width: 100%; margin: 0 auto; }
-        .section-title { font-size: clamp(1.8rem,5vw,2.5rem); font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 2rem; position: relative; display: inline-block; }
-        .section-title:after { content: ''; width: 60px; height: 3px; background: #e4b53c; position: absolute; bottom: -10px; left: 0; }
-
-        /* Hero */
+        .section-title { font-size: clamp(1.6rem,5vw,2.3rem); font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 1.8rem; position: relative; display: inline-block; }
+        .section-title:after { content: ''; width: 55px; height: 3px; background: #e4b53c; position: absolute; bottom: -8px; left: 0; }
         .hero-page { background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/3998424/pexels-photo-3998424.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; }
         .hero-content { text-align: center; }
-        .hero-content h1 { font-size: clamp(2.5rem,8vw,5rem); font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; background: linear-gradient(135deg,#FFD97A,#b87c0c); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .btn-gold { background: #e4b53c; border: none; padding: 14px 38px; font-weight: 700; border-radius: 60px; font-size: 1rem; margin-top: 1rem; cursor: pointer; color: #000; transition: 0.3s; }
-
-        /* Work Gallery - HD Animated */
-        .work-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin-top: 2rem; }
-        .work-card { background: #111; border-radius: 28px; overflow: hidden; transition: transform 0.3s; cursor: pointer; }
-        .work-card:hover { transform: scale(1.02); }
-        .work-card img { width: 100%; height: 280px; object-fit: cover; transition: 0.5s; }
-        .work-card:hover img { transform: scale(1.05); }
-        .work-card .work-info { padding: 1.2rem; text-align: center; }
-        .work-card h3 { color: #e4b53c; margin-bottom: 0.3rem; }
-
-        /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-        .service-card { background: #121212; border-radius: 28px; padding: 1.8rem; text-align: center; border: 1px solid #2a2a2a; transition: 0.3s; }
-        .service-card i { font-size: 2.5rem; color: #e4b53c; margin-bottom: 1rem; }
-        .price-tag { font-size: 1.5rem; font-weight: 700; color: #e4b53c; margin-top: 0.5rem; }
-
-        /* Tools Showcase */
-        .tools-showcase { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin: 2rem 0; }
-        .tool-item { text-align: center; background: #111; padding: 1.2rem; border-radius: 32px; min-width: 120px; }
-        .tool-item i { font-size: 3rem; color: #e4b53c; }
-
-        /* Team */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-        .team-card { background: #111; border-radius: 28px; padding: 1.5rem; text-align: center; }
-        .team-avatar { width: 100px; height: 100px; background: #2a2a2a; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 2px solid #e4b53c; }
-
-        /* Admin Panel Modal */
-        .admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); justify-content: center; align-items: center; z-index: 2000; }
-        .admin-content { background: #1a1a1a; max-width: 500px; width: 90%; border-radius: 36px; padding: 2rem; }
-        .admin-content input, .admin-content textarea { width: 100%; margin: 10px 0; padding: 12px; border-radius: 30px; background: #2c2c2c; border: none; color: white; }
-        .admin-content textarea { border-radius: 20px; resize: vertical; }
-        .save-btn { background: #e4b53c; width: 100%; padding: 12px; border-radius: 40px; font-weight: bold; margin-top: 1rem; }
-
-        /* Booking Modal */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); justify-content: center; align-items: center; z-index: 1100; }
-        .modal-content { background: #1c1c1c; max-width: 450px; width: 90%; border-radius: 36px; padding: 1.8rem; }
-        .modal-content input, .modal-content select { width: 100%; margin: 10px 0; padding: 12px; border-radius: 60px; background: #2c2c2c; border: none; color: white; }
-        .whatsapp-fab { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; z-index: 99; cursor: pointer; }
-        footer { background: #020202; padding: 2rem; text-align: center; font-size: 0.75rem; }
-
+        .hero-content h1 { font-size: clamp(2.2rem,8vw,4.5rem); font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; background: linear-gradient(135deg,#FFD97A,#b87c0c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .btn-gold { background: #e4b53c; border: none; padding: 12px 32px; font-weight: 700; border-radius: 60px; font-size: 0.95rem; margin-top: 1rem; cursor: pointer; color: #000; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+        .service-card { background: #121212; border-radius: 28px; padding: 1.5rem; text-align: center; border: 1px solid #2a2a2a; position: relative; transition: 0.3s; }
+        .service-card i { font-size: 2.2rem; color: #e4b53c; margin-bottom: 0.8rem; }
+        .price-tag { font-size: 1.4rem; font-weight: 700; color: #e4b53c; margin-top: 0.5rem; }
+        .delete-service, .edit-service { position: absolute; top: 10px; background: #ff4444; color: white; border: none; border-radius: 50%; width: 26px; height: 26px; cursor: pointer; font-size: 11px; display: none; align-items: center; justify-content: center; }
+        .delete-service { right: 10px; }
+        .edit-service { right: 42px; background: #e4b53c; color: #000; }
+        .admin-mode .delete-service, .admin-mode .edit-service { display: flex; }
+        .add-service-form { background: #121212; border-radius: 28px; padding: 1.2rem; margin-bottom: 2rem; display: none; }
+        .add-service-form input, .add-service-form select { padding: 10px; margin: 5px; border-radius: 12px; border: none; background: #2c2c2c; color: white; width: calc(33% - 10px); }
+        .add-service-form button { background: #e4b53c; padding: 10px 20px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        .admin-mode .add-service-form { display: block; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; }
+        .team-card { background: #111; border-radius: 28px; padding: 1.2rem; text-align: center; }
+        .team-avatar { width: 90px; height: 90px; background: #2a2a2a; border-radius: 50%; margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; border: 2px solid #e4b53c; }
+        .work-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+        .work-card { background: #111; border-radius: 24px; overflow: hidden; }
+        .work-card img { width: 100%; height: 230px; object-fit: cover; }
+        .combos-slider { margin: 1rem 0; }
+        .combo-card { background: #121212; border-radius: 28px; padding: 1.5rem; text-align: center; border: 1px solid #e4b53c30; }
+        .combo-price { font-size: 1.8rem; font-weight: 800; color: #e4b53c; }
+        .time-slots { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0; }
+        .time-slot { background: #2c2c2c; padding: 8px 14px; border-radius: 25px; font-size: 0.8rem; cursor: pointer; border: none; color: #fff; }
+        .time-slot:hover, .time-slot.selected { background: #e4b53c; color: #000; }
+        .modal, .login-modal, .admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); justify-content: center; align-items: center; z-index: 2000; }
+        .modal-content, .login-content, .admin-content { background: #1a1a1a; max-width: 450px; width: 90%; border-radius: 36px; padding: 1.8rem; }
+        .modal-content input, .login-content input, .admin-content input, .admin-content textarea { width: 100%; margin: 10px 0; padding: 12px; border-radius: 30px; background: #2c2c2c; border: none; color: #fff; }
+        .guide-section { background: #121212; border-radius: 28px; padding: 1.2rem; margin: 1rem 0; }
+        .guide-step { display: flex; align-items: center; gap: 0.8rem; margin: 0.8rem 0; padding: 0.7rem; background: #1a1a1a; border-radius: 18px; flex-wrap: wrap; }
+        .guide-number { width: 32px; height: 32px; background: #e4b53c; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .social-icons { display: flex; justify-content: center; gap: 1rem; margin: 1.2rem 0; }
+        .social-icon { width: 42px; height: 42px; background: #2c2c2c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #e4b53c; text-decoration: none; transition: 0.3s; }
+        .social-icon:hover { background: #e4b53c; color: #000; transform: scale(1.05); }
+        .whatsapp-fab { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; color: white; z-index: 99; cursor: pointer; }
+        footer { background: #020202; padding: 1.5rem; text-align: center; font-size: 0.7rem; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+        .contact-card { background: #111; border-radius: 24px; padding: 1.2rem; text-align: center; }
+        .live-status { background: #1e5a2e; display: inline-block; padding: 0.2rem 1rem; border-radius: 40px; font-size: 0.75rem; margin-bottom: 0.8rem; }
+        .hours-list p { padding: 0.6rem 0; border-bottom: 1px solid #222; display: flex; justify-content: space-between; }
+        .save-btn { background: #e4b53c; width: 100%; padding: 12px; border-radius: 30px; font-weight: bold; border: none; cursor: pointer; margin-top: 1rem; }
         @media (min-width: 768px) { .menu-icon { display: none; } .desktop-nav { display: flex; } }
-        @media (max-width: 767px) { .team-grid { grid-template-columns: repeat(2,1fr); } .work-gallery { grid-template-columns: 1fr; } }
-        .update-toast { position: fixed; bottom: 80px; left: 20px; background: #1e5a2e; padding: 10px 20px; border-radius: 40px; z-index: 100; font-size: 0.8rem; }
+        @media (max-width: 767px) { .team-grid { grid-template-columns: repeat(2,1fr); } .add-service-form input { width: 100% !important; margin: 5px 0; } }
+        .help-email { text-align: center; padding: 0.8rem; background: #1a1a1a; border-radius: 20px; margin-top: 1rem; }
     </style>
 </head>
 <body>
-    <div class="sticky-header">
-        <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
-        <div class="logo"><h2 id="shopNameDisplay">CALICUTZ PRO</h2></div>
-        <div class="desktop-nav">
-            <a href="#home">INICIO</a> <a href="#services">SERVICIOS</a> <a href="#work">TRABAJOS</a>
-            <a href="#team">BARBEROS</a> <a href="#tools">HERRAMIENTAS</a> <a href="#about">NOSOTROS</a>
-            <a href="#hours">HORARIO</a> <a href="#contact">CONTACTO</a>
-            <a href="#" id="adminModeBtn" class="admin-btn"><i class="fas fa-shield-alt"></i> ADMIN</a>
-        </div>
-        <button id="headerBookBtn" class="book-now-btn">✂️ CITA</button>
+
+<div class="sticky-header">
+    <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
+    <div class="logo"><h2 id="shopName">THAKUR'S BARBER</h2></div>
+    <div class="desktop-nav" id="desktopNav">
+        <a href="#home">HOME</a> <a href="#services">SERVICES</a> <a href="#combos">COMBOS</a>
+        <a href="#team">BARBERS</a> <a href="#gallery">GALLERY</a> <a href="#guide">GUIDE</a>
+        <a href="#hours">HOURS</a> <a href="#contact">CONTACT</a>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#home">INICIO</a> <a href="#services">SERVICIOS</a> <a href="#work">TRABAJOS</a>
-        <a href="#team">BARBEROS</a> <a href="#tools">HERRAMIENTAS</a> <a href="#about">NOSOTROS</a>
-        <a href="#hours">HORARIO</a> <a href="#contact">CONTACTO</a>
-    </div>
+    <div><button class="admin-btn" id="adminPanelBtn"><i class="fas fa-shield-alt"></i> ADMIN</button><button class="book-now-btn" id="bookBtn"><i class="fas fa-calendar"></i> BOOK</button></div>
+</div>
+<div class="mobile-menu" id="mobileMenu"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#combos">COMBOS</a><a href="#team">BARBERS</a><a href="#gallery">GALLERY</a><a href="#guide">GUIDE</a><a href="#hours">HOURS</a><a href="#contact">CONTACT</a></div>
 
-    <!-- PAGE 1: HOME -->
-    <section id="home" class="page hero-page">
-        <div class="container hero-content">
-            <h1 id="heroTitle">IDENTITY<br>DESIGNER</h1>
-            <p id="heroSub" style="margin:1rem 0; font-size:1.1rem;">Premium Barber Experience · Estilo & Tradición</p>
-            <button class="btn-gold" id="heroBookBtn">AGENDA TU CITA →</button>
-        </div>
-    </section>
+<!-- HERO -->
+<section id="home" class="page hero-page"><div class="container hero-content"><h1 id="heroTitle">THAKUR'S<br>BARBER LOUNGE</h1><p id="heroSub" style="margin:1rem 0;">Premium Grooming | Royal Experience</p><button class="btn-gold" id="heroBookBtn">BOOK APPOINTMENT →</button></div></section>
 
-    <!-- PAGE 2: SERVICES -->
-    <section id="services" class="page">
-        <div class="container">
-            <h2 class="section-title">Servicios Premium</h2>
-            <div class="services-grid" id="servicesGrid">
-                <!-- Dynamic from localStorage -->
-            </div>
-        </div>
-    </section>
+<!-- SERVICES -->
+<section id="services" class="page"><div class="container"><h2 class="section-title">Premium Services</h2>
+<div id="addServiceForm" class="add-service-form"><h3><i class="fas fa-plus-circle"></i> Add Service</h3><input type="text" id="newServiceName" placeholder="Service Name"><input type="text" id="newServicePrice" placeholder="Price"><select id="newServiceIcon"><option value="fas fa-cut">✂️ Haircut</option><option value="fas fa-beard">🧔 Beard</option><option value="fas fa-bolt">⚡ Combo</option></select><input type="text" id="newServiceDesc" placeholder="Description"><button id="addServiceBtn"><i class="fas fa-plus"></i> ADD</button></div>
+<div class="services-grid" id="servicesGrid"></div></div></section>
 
-    <!-- PAGE 3: WORK GALLERY (Barber Shop Work HD) -->
-    <section id="work" class="page">
-        <div class="container">
-            <h2 class="section-title">Nuestros Trabajos</h2>
-            <div class="work-gallery" id="workGallery">
-                <!-- Dynamic HD Work Images -->
-            </div>
-        </div>
-    </section>
+<!-- COMBOS -->
+<section id="combos" class="page"><div class="container"><h2 class="section-title">Exclusive Combos</h2><div class="combos-slider" id="combosGrid"></div></div></section>
 
-    <!-- PAGE 4: TEAM -->
-    <section id="team" class="page">
-        <div class="container">
-            <h2 class="section-title">Master Barbers</h2>
-            <div class="team-grid" id="teamGrid"></div>
-        </div>
-    </section>
+<!-- TEAM -->
+<section id="team" class="page"><div class="container"><h2 class="section-title">Master Barbers</h2><div class="team-grid" id="teamGrid"></div></div></section>
 
-    <!-- PAGE 5: TOOLS & EQUIPMENT -->
-    <section id="tools" class="page">
-        <div class="container">
-            <h2 class="section-title">Herramientas Profesionales</h2>
-            <div class="tools-showcase">
-                <div class="tool-item"><i class="fas fa-cut"></i><p>Cizer Premium</p></div>
-                <div class="tool-item"><i class="fas fa-bolt"></i><p>Shaving Machine</p></div>
-                <div class="tool-item"><i class="fas fa-jar"></i><p>Creams & Oils</p></div>
-                <div class="tool-item"><i class="fas fa-scissors"></i><p>Cutting Posters</p></div>
-                <div class="tool-item"><i class="fas fa-hot-tub"></i><p>Hot Towel System</p></div>
-            </div>
-            <p style="text-align:center; margin-top:1rem;">✂️ Equipamiento de última generación para resultados perfectos</p>
-        </div>
-    </section>
+<!-- GALLERY -->
+<section id="gallery" class="page"><div class="container"><h2 class="section-title">Our Work</h2><div class="work-gallery" id="galleryGrid"></div></div></section>
 
-    <!-- PAGE 6: ABOUT US -->
-    <section id="about" class="page">
-        <div class="container">
-            <h2 class="section-title">Sobre Nosotros</h2>
-            <div style="background:#111; border-radius:32px; padding:2rem;">
-                <p id="aboutText">Calicutz Pro es más que una barbería, es un espacio donde la tradición se encuentra con la modernidad. Contamos con los mejores barberos certificados, herramientas de alta calidad y un ambiente único para que renueves tu imagen con confianza.</p>
-                <p style="margin-top:1rem;"><strong>Misión:</strong> Brindar experiencias de corte premium con estándares internacionales.</p>
-                <p><strong>Visión:</strong> Ser la barbería de referencia en CDMX por innovación y calidad.</p>
-            </div>
-        </div>
-    </section>
+<!-- GUIDE -->
+<section id="guide" class="page"><div class="container"><h2 class="section-title">📖 How to Use</h2>
+<div class="guide-section"><h3><i class="fas fa-user"></i> For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK" or "BOOK APPOINTMENT"</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Service, Date, Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP"</div></div></div>
+<div class="guide-section"><h3><i class="fas fa-shield-alt"></i> For Admin (Barber)</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "ADMIN" button</div></div><div class="guide-step"><div class="guide-number">2</div><div>Username: <strong>dhamtan</strong> | Password: <strong>Thakur1995@</strong></div></div><div class="guide-step"><div class="guide-number">3</div><div>Forgot Password? Use Master Password: <strong>Thakur9728199145</strong></div></div><div class="guide-step"><div class="guide-number">4</div><div>After login: Add/Edit/Delete Services</div></div></div>
+<div class="help-email"><i class="fas fa-envelope"></i> <strong>24/7 Support:</strong> <a href="mailto:gurubhi1995@gmail.com">gurubhi1995@gmail.com</a><br><small>Response in 2-3 working days</small></div></div></section>
 
-    <!-- PAGE 7: HOURS -->
-    <section id="hours" class="page">
-        <div class="container">
-            <h2 class="section-title">Horario de Atención</h2>
-            <div id="hoursDisplay" style="background:#111; border-radius:32px; padding:2rem;"></div>
-        </div>
-    </section>
+<!-- HOURS -->
+<section id="hours" class="page"><div class="container"><h2 class="section-title">Working Hours</h2><div><span class="live-status" id="liveStatus">🔴 Loading...</span></div><div class="hours-list" id="hoursList"></div></div></section>
 
-    <!-- PAGE 8: CONTACT + DISCLAIMER -->
-    <section id="contact" class="page">
-        <div class="container">
-            <h2 class="section-title">📍 Contáctanos</h2>
-            <div style="background:#111; border-radius:32px; padding:2rem;">
-                <p id="addressDisplay"><i class="fas fa-map-pin"></i> C. Vallarta 59, Tlalnepantla Centro, 54000 Méx.</p>
-                <p id="phoneDisplay"><i class="fas fa-phone"></i> +52 55 3706 0783 | 55 7594 3136</p>
-                <p id="emailDisplay"><i class="fas fa-envelope"></i> contacto@calicutzpro.com</p>
-                <div style="margin-top:1rem;">
-                    <a href="tel:+525537060783" class="btn-gold" style="padding:8px 24px; text-decoration:none; display:inline-block;">📞 Llamar</a>
-                    <button onclick="window.open('https://wa.me/525575943136','_blank')" class="btn-gold" style="margin-left:1rem; background:#25d366;">💬 WhatsApp</button>
-                </div>
-            </div>
-            <div style="margin-top:2rem; background:#0a0a0a; border-radius:32px; padding:1.5rem; text-align:center;">
-                <h3>📜 Disclaimer</h3>
-                <p style="font-size:0.8rem;">Calicutz Pro no se hace responsable por citas no confirmadas. Los precios están sujetos a cambios sin previo aviso. Todos los productos son originales. Para promociones especiales consulte directamente con nuestro equipo.</p>
-            </div>
-        </div>
-    </section>
+<!-- CONTACT -->
+<section id="contact" class="page"><div class="container"><h2 class="section-title">Contact Us</h2><div class="contact-grid" id="contactGrid"></div><div class="social-icons" id="socialIcons"></div></div></section>
 
-    <footer>
-        <p>© 2026 CALICUTZ PRO — Barbería Premium | Todos los derechos reservados</p>
-        <p style="margin-top:0.5rem;">Síguenos: <i class="fab fa-instagram"></i> @calicutzpro | <i class="fab fa-facebook"></i> /calicutz</p>
-    </footer>
+<footer><p id="footerText">© 2026 THAKUR'S BARBER LOUNGE — All Rights Reserved</p></footer>
+<div class="whatsapp-fab" id="whatsappFab"><i class="fab fa-whatsapp"></i></div>
 
-    <div class="whatsapp-fab" id="whatsappFab"><i class="fab fa-whatsapp"></i></div>
+<!-- BOOKING MODAL -->
+<div id="bookingModal" class="modal"><div class="modal-content"><span id="closeModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2 style="color:#e4b53c;">📅 Book Appointment</h2>
+<form id="bookingForm"><input type="text" id="userName" placeholder="Full Name" required><input type="tel" id="userPhone" placeholder="Phone Number" required><select id="userService" required></select><input type="date" id="bookDate" required><div id="timeSlotContainer" class="time-slots"></div><input type="hidden" id="selectedTime" value=""><button type="submit" style="background:#e4b53c; width:100%; padding:12px; border-radius:30px; margin-top:1rem;">SEND VIA WHATSAPP</button></form></div></div>
 
-    <!-- ADMIN MODAL (PIN PROTECTED: 9728199145) -->
-    <div id="adminModal" class="admin-modal">
-        <div class="admin-content">
-            <span id="closeAdminModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span>
-            <h2 style="color:#e4b53c;">🔐 Admin Panel</h2>
-            <input type="password" id="adminPin" placeholder="Ingrese PIN de Administrador" style="margin:1rem 0;">
-            <button id="verifyAdminBtn" class="save-btn">Verificar Acceso</button>
-            <div id="adminControls" style="display:none; margin-top:1.5rem;">
-                <h3>Actualizar Datos del Sitio</h3>
-                <label>Nombre Tienda:</label><input type="text" id="updateShopName" placeholder="Nombre">
-                <label>Hero Title:</label><input type="text" id="updateHeroTitle" placeholder="Título principal">
-                <label>Dirección:</label><input type="text" id="updateAddress">
-                <label>Teléfono:</label><input type="text" id="updatePhone">
-                <label>Horario:</label><textarea id="updateHours" rows="3" placeholder="Lun-Vie: 10am-8pm"></textarea>
-                <label>Precio Corte:</label><input type="number" id="updateCutPrice">
-                <label>Precio Barba:</label><input type="number" id="updateBeardPrice">
-                <label>Precio Combo:</label><input type="number" id="updateComboPrice">
-                <label>Sobre Nosotros:</label><textarea id="updateAbout" rows="3"></textarea>
-                <button id="saveAllDataBtn" class="save-btn"><i class="fas fa-sync-alt"></i> GUARDAR CAMBIOS (Auto-Sync)</button>
-                <p style="font-size:0.7rem; margin-top:1rem;">✅ Los cambios se guardan automáticamente y se reflejan en todo el sitio</p>
-            </div>
-        </div>
-    </div>
+<!-- LOGIN MODAL (Username + Password + Master Password Forgot) -->
+<div id="loginModal" class="login-modal"><div class="login-content"><span id="closeLoginModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2 style="color:#e4b53c;"><i class="fas fa-lock"></i> Admin Login</h2>
+<div id="loginFormDiv"><input type="text" id="loginUsername" placeholder="Username" value="dhamtan"><input type="password" id="loginPassword" placeholder="Password"><button id="loginBtn" class="save-btn">LOGIN</button><button id="forgotBtn" style="background:#444; margin-top:0.5rem;" class="save-btn">FORGOT PASSWORD?</button></div>
+<div id="forgotFormDiv" style="display:none;"><input type="password" id="masterPasswordInput" placeholder="Enter Master Password"><input type="password" id="newPasswordInput" placeholder="New Password"><input type="password" id="confirmPasswordInput" placeholder="Confirm New Password"><button id="resetPasswordBtn" class="save-btn">RESET PASSWORD</button><button id="backToLoginBtn" style="background:#444; margin-top:0.5rem;" class="save-btn">BACK TO LOGIN</button></div>
+</div></div>
 
-    <!-- BOOKING MODAL -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModalBtn" style="float:right; font-size:28px; cursor:pointer;">&times;</span>
-            <h2 style="color:#e4b53c;">📅 Reserva tu cita</h2>
-            <form id="bookingForm">
-                <input type="text" id="bookName" placeholder="Nombre completo" required>
-                <input type="tel" id="bookPhone" placeholder="WhatsApp / Teléfono" required>
-                <select id="bookService"><option>Corte de Cabello</option><option>Arreglo de Barba</option><option>Combo Premium</option></select>
-                <input type="date" id="bookDate" required><input type="time" id="bookTime" required>
-                <button type="submit" style="background:#e4b53c; width:100%; padding:12px; border-radius:60px; font-weight:bold;">Enviar vía WhatsApp</button>
-            </form>
-        </div>
-    </div>
+<!-- ADMIN PANEL MODAL -->
+<div id="adminModal" class="admin-modal"><div class="admin-content"><span id="closeAdminModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2 style="color:#e4b53c;"><i class="fas fa-shield-alt"></i> Admin Panel</h2>
+<div id="adminPanelContent"><label>Shop Name:</label><input type="text" id="updateShopName"><label>Hero Title:</label><input type="text" id="updateHeroTitle"><label>Address:</label><textarea id="updateAddress" rows="2"></textarea><label>Phone:</label><input type="text" id="updatePhone"><label>WhatsApp (digits):</label><input type="text" id="updateWhatsapp"><label>Email:</label><input type="text" id="updateEmail"><label>Hours:</label><textarea id="updateHours" rows="2"></textarea><label>Footer:</label><input type="text" id="updateFooter"><h3 style="margin-top:1rem;">Social Media</h3><label>Instagram URL:</label><input type="text" id="updateInstagram"><label>Facebook URL:</label><input type="text" id="updateFacebook"><button id="saveAdminDataBtn" class="save-btn">SAVE ALL CHANGES</button><button id="logoutAdminBtn" style="background:#c62828; margin-top:1rem;" class="save-btn">LOGOUT</button></div></div></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        // ---------- DEFAULT DATA (User Provided Details) ----------
-        const defaultData = {
-            shopName: "CALICUTZ PRO",
-            heroTitle: "IDENTITY DESIGNER",
-            address: "C. Vallarta 59, Tlalnepantla Centro, 54000 Méx. | Victor Hugo 76-D Col. Anzures",
-            phone: "+52 55 3706 0783 | 55 7594 3136",
-            hours: "Lunes a Viernes: 10:00 - 20:00\nSábado: 10:00 - 19:00\nDomingo: 12:00 - 17:00",
-            cutPrice: 250,
-            beardPrice: 180,
-            comboPrice: 380,
-            aboutText: "Calicutz Pro es más que una barbería, es un espacio donde la tradición se encuentra con la modernidad. Contamos con los mejores barberos certificados, herramientas de alta calidad y un ambiente único para que renueves tu imagen con confianza."
-        };
-
-        // Load or initialize localStorage
-        function loadSiteData() {
-            if(!localStorage.getItem('calicutzData')) {
-                localStorage.setItem('calicutzData', JSON.stringify(defaultData));
-            }
-            return JSON.parse(localStorage.getItem('calicutzData'));
-        }
-
-        let siteData = loadSiteData();
-
-        // Update entire UI
-        function refreshUI() {
-            document.getElementById('shopNameDisplay').innerText = siteData.shopName || "CALICUTZ PRO";
-            document.getElementById('heroTitle').innerHTML = (siteData.heroTitle || "IDENTITY DESIGNER").replace(/\n/g,'<br>');
-            
-            // Services Grid
-            const servicesHTML = `
-                <div class="service-card"><i class="fas fa-cut"></i><h3>Corte de Cabello</h3><p>Estilo clásico, fade o texturizado</p><div class="price-tag">$${siteData.cutPrice}</div></div>
-                <div class="service-card"><i class="fas fa-beard"></i><h3>Arreglo de Barba</h3><p>Perfilado con navaja + toalla caliente</p><div class="price-tag">$${siteData.beardPrice}</div></div>
-                <div class="service-card"><i class="fas fa-bolt"></i><h3>Combo Premium</h3><p>Corte + Barba + Mascarilla</p><div class="price-tag">$${siteData.comboPrice}</div></div>
-                <div class="service-card"><i class="fas fa-child"></i><h3>Kids Cut</h3><p>Para pequeños</p><div class="price-tag">$200</div></div>
-            `;
-            document.getElementById('servicesGrid').innerHTML = servicesHTML;
-            
-            // Work Gallery - HD Real Work Images (Barber shop real work)
-            const workImages = [
-                {img: "https://images.pexels.com/photos/3998424/pexels-photo-3998424.jpeg?auto=compress&cs=tinysrgb&w=600", title: "Fade Perfecto", desc: "Corte degradado"},
-                {img: "https://images.pexels.com/photos/3998406/pexels-photo-3998406.jpeg?auto=compress&cs=tinysrgb&w=600", title: "Perfilado Barba", desc: "Navaja premium"},
-                {img: "https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=600", title: "Estilo Moderno", desc: "Texturizado"},
-                {img: "https://images.pexels.com/photos/2983469/pexels-photo-2983469.jpeg?auto=compress&cs=tinysrgb&w=600", title: "Hot Towel", desc: "Ritual de relajación"}
-            ];
-            let galleryHTML = '';
-            workImages.forEach(w => {
-                galleryHTML += `<div class="work-card"><img src="${w.img}" alt="${w.title}" loading="lazy"><div class="work-info"><h3>${w.title}</h3><p>${w.desc}</p></div></div>`;
-            });
-            document.getElementById('workGallery').innerHTML = galleryHTML;
-            
-            // Team Grid
-            const teamHTML = `
-                <div class="team-card"><div class="team-avatar"><i class="fas fa-user-astronaut"></i></div><h3>Víctor Hugo</h3><p>Master Barber · 12 años</p><span>⭐⭐⭐⭐⭐</span></div>
-                <div class="team-card"><div class="team-avatar"><i class="fas fa-user-ninja"></i></div><h3>Carlos Méndez</h3><p>Fade Specialist</p><span>⭐⭐⭐⭐⭐</span></div>
-                <div class="team-card"><div class="team-avatar"><i class="fas fa-user-check"></i></div><h3>Javier Ruiz</h3><p>Barba Designer</p><span>⭐⭐⭐⭐⭐</span></div>
-                <div class="team-card"><div class="team-avatar"><i class="fas fa-user-tie"></i></div><h3>Miguel Ángel</h3><p>Estilista Senior</p><span>⭐⭐⭐⭐⭐</span></div>
-            `;
-            document.getElementById('teamGrid').innerHTML = teamHTML;
-            
-            // Hours Display
-            const hoursLines = siteData.hours.split('\n');
-            let hoursHtml = '<div style="padding:1rem;">';
-            hoursLines.forEach(line => { if(line.trim()) hoursHtml += `<p style="padding:0.8rem 0; border-bottom:1px solid #222;">${line}</p>`; });
-            hoursHtml += '</div>';
-            document.getElementById('hoursDisplay').innerHTML = hoursHtml;
-            
-            // Address & Contact
-            document.getElementById('addressDisplay').innerHTML = `<i class="fas fa-map-pin"></i> ${siteData.address}`;
-            document.getElementById('phoneDisplay').innerHTML = `<i class="fas fa-phone"></i> ${siteData.phone}`;
-            document.getElementById('aboutText').innerHTML = siteData.aboutText;
-        }
-
-        // Save data & refresh
-        function saveAndRefresh(newData) {
-            siteData = {...siteData, ...newData};
-            localStorage.setItem('calicutzData', JSON.stringify(siteData));
-            refreshUI();
-            showToast('✅ Datos actualizados y sincronizados!');
-        }
-
-        function showToast(msg) {
-            let toast = document.createElement('div');
-            toast.className = 'update-toast';
-            toast.innerHTML = msg;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-        }
-
-        // Admin Panel Logic with PIN 9728199145
-        const adminModal = document.getElementById('adminModal');
-        const adminModeBtn = document.getElementById('adminModeBtn');
-        const closeAdminModal = document.getElementById('closeAdminModal');
-        const verifyBtn = document.getElementById('verifyAdminBtn');
-        const adminControls = document.getElementById('adminControls');
+<script>
+    // ============================================
+    // CREDENTIALS
+    // Username: dhamtan
+    // Password: Thakur1995@
+    // Master Password: Thakur9728199145
+    // ============================================
+    
+    let siteData = {
+        shopName: "THAKUR'S BARBER",
+        heroTitle: "THAKUR'S<br>BARBER LOUNGE",
+        heroSub: "Premium Grooming | Royal Experience",
+        address: "C. Vallarta 59, Tlalnepantla Centro, 54000 Méx.",
+        phone: "+52 55 3706 0783",
+        whatsapp: "525575943136",
+        email: "gurubhi1995@gmail.com",
+        hours: "Mon-Fri: 10:00 - 20:00\nSaturday: 10:00 - 19:00\nSunday: 12:00 - 17:00",
+        footerText: "© 2026 THAKUR'S BARBER LOUNGE — All Rights Reserved",
+        services: [
+            { id: "s1", name: "Signature Haircut", icon: "fas fa-cut", price: "$350", desc: "Precision haircut with styling" },
+            { id: "s2", name: "Royal Beard", icon: "fas fa-beard", price: "$250", desc: "Hot towel + premium shaping" },
+            { id: "s3", name: "Thakur Special Combo", icon: "fas fa-bolt", price: "$550", desc: "Haircut + Beard + Massage" }
+        ],
+        combos: [
+            { name: "Executive Combo", price: "$450", desc: "Haircut + Beard", popular: true },
+            { name: "Royal Combo", price: "$650", desc: "Haircut + Beard + Hot Towel + Drink", popular: false },
+            { name: "Express", price: "$300", desc: "Quick haircut + Beard line up", popular: false }
+        ],
+        team: [
+            { name: "Master Thakur", role: "Master Barber", rating: "⭐⭐⭐⭐⭐" },
+            { name: "Raj Verma", role: "Fade Specialist", rating: "⭐⭐⭐⭐⭐" },
+            { name: "Rohan Singh", role: "Beard Expert", rating: "⭐⭐⭐⭐⭐" },
+            { name: "Arjun", role: "Stylist", rating: "⭐⭐⭐⭐⭐" }
+        ],
+        gallery: [
+            "https://images.pexels.com/photos/3998424/pexels-photo-3998424.jpeg?auto=compress&cs=tinysrgb&w=400",
+            "https://images.pexels.com/photos/3998406/pexels-photo-3998406.jpeg?auto=compress&cs=tinysrgb&w=400",
+            "https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=400",
+            "https://images.pexels.com/photos/2983469/pexels-photo-2983469.jpeg?auto=compress&cs=tinysrgb&w=400"
+        ],
+        social: { instagram: "", facebook: "" }
+    };
+    
+    // Admin session
+    let isAdminLoggedIn = false;
+    let adminMode = false;
+    let timeSlots = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
+    let selectedTimeSlot = "";
+    
+    // Credentials
+    const VALID_USERNAME = "dhamtan";
+    const VALID_PASSWORD = "Thakur1995@";
+    const MASTER_PASSWORD = "Thakur9728199145";
+    
+    function generateId() { return Date.now() + Math.random().toString(36).substr(2, 4); }
+    
+    function loadData() { let saved = localStorage.getItem('thakurBarberData'); if(saved) siteData = JSON.parse(saved); else saveData(); }
+    function saveData() { localStorage.setItem('thakurBarberData', JSON.stringify(siteData)); }
+    
+    function renderWebsite() {
+        document.getElementById('shopName').innerText = siteData.shopName;
+        document.getElementById('heroTitle').innerHTML = siteData.heroTitle;
+        document.getElementById('heroSub').innerText = siteData.heroSub;
+        document.getElementById('footerText').innerHTML = siteData.footerText;
         
-        adminModeBtn.onclick = () => { adminModal.style.display = 'flex'; document.getElementById('adminPin').value = ''; adminControls.style.display = 'none'; };
-        closeAdminModal.onclick = () => adminModal.style.display = 'none';
-        window.onclick = (e) => { if(e.target === adminModal) adminModal.style.display = 'none'; };
+        let servicesHtml = '';
+        siteData.services.forEach(s => {
+            servicesHtml += `<div class="service-card" data-id="${s.id}"><button class="delete-service" onclick="deleteService('${s.id}')"><i class="fas fa-trash"></i></button><button class="edit-service" onclick="editService('${s.id}')"><i class="fas fa-edit"></i></button><i class="${s.icon}"></i><h3>${s.name}</h3><p>${s.desc}</p><div class="price-tag">${s.price}</div></div>`;
+        });
+        document.getElementById('servicesGrid').innerHTML = servicesHtml;
         
-        verifyBtn.onclick = () => {
-            const pin = document.getElementById('adminPin').value;
-            if(pin === "9728199145") {
-                adminControls.style.display = 'block';
-                // Load current values into admin form
-                document.getElementById('updateShopName').value = siteData.shopName;
-                document.getElementById('updateHeroTitle').value = siteData.heroTitle;
-                document.getElementById('updateAddress').value = siteData.address;
-                document.getElementById('updatePhone').value = siteData.phone;
-                document.getElementById('updateHours').value = siteData.hours;
-                document.getElementById('updateCutPrice').value = siteData.cutPrice;
-                document.getElementById('updateBeardPrice').value = siteData.beardPrice;
-                document.getElementById('updateComboPrice').value = siteData.comboPrice;
-                document.getElementById('updateAbout').value = siteData.aboutText;
-                showToast('🔓 Acceso Admin concedido - Puede editar los datos');
-            } else {
-                alert('PIN incorrecto. Acceso denegado.');
-            }
-        };
+        let combosHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;">';
+        siteData.combos.forEach(c => { combosHtml += `<div class="combo-card"><span>${c.popular ? '⭐ POPULAR' : '🔥'}</span><h3>${c.name}</h3><div class="combo-price">${c.price}</div><p>${c.desc}</p><button class="btn-gold" style="margin-top:10px;padding:6px 18px;" onclick="openBookingWithService('${c.name} ${c.price}')">Book</button></div>`; });
+        combosHtml += '</div>';
+        document.getElementById('combosGrid').innerHTML = combosHtml;
         
-        document.getElementById('saveAllDataBtn').onclick = () => {
-            const updated = {
-                shopName: document.getElementById('updateShopName').value,
-                heroTitle: document.getElementById('updateHeroTitle').value,
-                address: document.getElementById('updateAddress').value,
-                phone: document.getElementById('updatePhone').value,
-                hours: document.getElementById('updateHours').value,
-                cutPrice: parseInt(document.getElementById('updateCutPrice').value) || 250,
-                beardPrice: parseInt(document.getElementById('updateBeardPrice').value) || 180,
-                comboPrice: parseInt(document.getElementById('updateComboPrice').value) || 380,
-                aboutText: document.getElementById('updateAbout').value
-            };
-            saveAndRefresh(updated);
-            adminModal.style.display = 'none';
-        };
+        let teamHtml = '';
+        siteData.team.forEach(t => { teamHtml += `<div class="team-card"><div class="team-avatar"><i class="fas fa-user"></i></div><h3>${t.name}</h3><p>${t.role}</p><span>${t.rating}</span></div>`; });
+        document.getElementById('teamGrid').innerHTML = teamHtml;
         
-        // Booking Modal
-        const modal = document.getElementById('bookingModal');
-        const openModal = () => modal.style.display = 'flex';
-        document.getElementById('headerBookBtn')?.addEventListener('click', openModal);
-        document.getElementById('heroBookBtn')?.addEventListener('click', openModal);
-        document.getElementById('whatsappFab')?.addEventListener('click', () => window.open('https://wa.me/525575943136?text=Hola%20Calicutz%20quisiera%20información', '_blank'));
-        document.getElementById('closeModalBtn').onclick = () => modal.style.display = 'none';
-        window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
+        let galleryHtml = '';
+        siteData.gallery.forEach(img => { galleryHtml += `<div class="work-card"><img src="${img}" alt="Work"><div class="work-info"><p>Professional Work</p></div></div>`; });
+        document.getElementById('galleryGrid').innerHTML = galleryHtml;
         
-        document.getElementById('bookingForm').onsubmit = (e) => {
-            e.preventDefault();
-            const name = document.getElementById('bookName').value;
-            const phone = document.getElementById('bookPhone').value;
-            const service = document.getElementById('bookService').value;
-            const date = document.getElementById('bookDate').value;
-            const time = document.getElementById('bookTime').value;
-            if(!name || !phone || !date || !time) return alert("Completa todos los campos");
-            const msg = `Hola Calicutz Pro! 👋 Soy ${name}, teléfono: ${phone}. Quiero agendar: ${service} para el ${date} a las ${time}.`;
-            window.open(`https://wa.me/525575943136?text=${encodeURIComponent(msg)}`, '_blank');
-            modal.style.display = 'none';
-            e.target.reset();
-        };
+        let hoursHtml = '';
+        siteData.hours.split('\n').forEach(line => { if(line.trim()) { let parts = line.split(':'); hoursHtml += `<p><span>${parts[0]}</span><span>${parts[1] || ''}</span></p>`; } });
+        document.getElementById('hoursList').innerHTML = hoursHtml;
         
-        // Mobile Menu
-        document.getElementById('menuToggle').onclick = () => document.getElementById('mobileMenu').classList.toggle('show');
-        document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('show')));
+        let contactHtml = `<div class="contact-card"><i class="fas fa-map-pin"></i><h3>Address</h3><p>${siteData.address}</p></div><div class="contact-card"><i class="fas fa-phone"></i><h3>Phone</h3><p>${siteData.phone}</p><button onclick="window.location.href='tel:${siteData.phone}'" style="background:#e4b53c;padding:6px 16px;border-radius:30px;">Call</button></div><div class="contact-card"><i class="fas fa-clock"></i><h3>Hours</h3><p>${siteData.hours.replace(/\n/g,'<br>')}</p></div><div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>${siteData.email}</p></div>`;
+        document.getElementById('contactGrid').innerHTML = contactHtml;
         
-        // PWA
-        if('serviceWorker' in navigator){
-            const swCode = `self.addEventListener('install', e => e.waitUntil(self.skipWaiting())); self.addEventListener('fetch', e => e.respondWith(fetch(e.request)));`;
-            navigator.serviceWorker.register(URL.createObjectURL(new Blob([swCode], {type:'application/javascript'}))).catch(()=>{});
-        }
+        let socialHtml = '';
+        if(siteData.social.instagram) socialHtml += `<a href="${siteData.social.instagram}" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>`;
+        if(siteData.social.facebook) socialHtml += `<a href="${siteData.social.facebook}" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>`;
+        document.getElementById('socialIcons').innerHTML = socialHtml;
         
-        // Initial Render
-        refreshUI();
-    </script>
+        let selectHtml = '';
+        siteData.services.forEach(s => { selectHtml += `<option>${s.name} - ${s.price}</option>`; });
+        document.getElementById('userService').innerHTML = selectHtml;
+        
+        let now = new Date(), day = now.getDay(), hours = now.getHours();
+        let open = (day>=1 && day<=5 && hours>=10 && hours<20) || (day===6 && hours>=10 && hours<19) || (day===0 && hours>=12 && hours<17);
+        document.getElementById('liveStatus').innerHTML = open ? "🟢 OPEN NOW" : "⛔ CLOSED";
+        document.getElementById('liveStatus').style.background = open ? "#1e5a2e" : "#c62828";
+        
+        if(adminMode) document.body.classList.add('admin-mode');
+        else document.body.classList.remove('admin-mode');
+    }
+    
+    window.deleteService = function(id) { if(!adminMode) return; siteData.services = siteData.services.filter(s => s.id !== id); saveData(); renderWebsite(); alert("Service deleted"); };
+    window.editService = function(id) { if(!adminMode) return; let s = siteData.services.find(s => s.id === id); if(s){ let n=prompt("New name:",s.name); if(n) s.name=n; let p=prompt("New price:",s.price); if(p) s.price=p; saveData(); renderWebsite(); } };
+    
+    document.getElementById('addServiceBtn').onclick = () => {
+        let name = document.getElementById('newServiceName').value, price = document.getElementById('newServicePrice').value, icon = document.getElementById('newServiceIcon').value, desc = document.getElementById('newServiceDesc').value;
+        if(!name || !price) { alert("Fill name and price"); return; }
+        siteData.services.push({ id: generateId(), name, icon, price, desc: desc || "Professional service" });
+        saveData(); renderWebsite();
+        document.getElementById('newServiceName').value = ''; document.getElementById('newServicePrice').value = ''; document.getElementById('newServiceDesc').value = '';
+        alert("Service added");
+    };
+    
+    function renderTimeSlots() { let html = ''; timeSlots.forEach(slot => { html += `<button type="button" class="time-slot" onclick="selectTimeSlot('${slot}')">${slot}</button>`; }); document.getElementById('timeSlotContainer').innerHTML = html; }
+    window.selectTimeSlot = function(slot) { selectedTimeSlot = slot; document.getElementById('selectedTime').value = slot; document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected')); event.target.classList.add('selected'); };
+    
+    // LOGIN SYSTEM
+    const loginModal = document.getElementById('loginModal');
+    const adminModalElem = document.getElementById('adminModal');
+    document.getElementById('adminPanelBtn').onclick = () => { loginModal.style.display = 'flex'; document.getElementById('loginFormDiv').style.display = 'block'; document.getElementById('forgotFormDiv').style.display = 'none'; };
+    document.getElementById('closeLoginModal').onclick = () => loginModal.style.display = 'none';
+    document.getElementById('closeAdminModal').onclick = () => adminModalElem.style.display = 'none';
+    
+    document.getElementById('loginBtn').onclick = () => {
+        let user = document.getElementById('loginUsername').value;
+        let pass = document.getElementById('loginPassword').value;
+        if(user === VALID_USERNAME && pass === VALID_PASSWORD) {
+            isAdminLoggedIn = true;
+            adminMode = true;
+            loginModal.style.display = 'none';
+            document.getElementById('updateShopName').value = siteData.shopName;
+            document.getElementById('updateHeroTitle').value = siteData.heroTitle.replace('<br>',' ');
+            document.getElementById('updateAddress').value = siteData.address;
+            document.getElementById('updatePhone').value = siteData.phone;
+            document.getElementById('updateWhatsapp').value = siteData.whatsapp;
+            document.getElementById('updateEmail').value = siteData.email;
+            document.getElementById('updateHours').value = siteData.hours;
+            document.getElementById('updateFooter').value = siteData.footerText;
+            document.getElementById('updateInstagram').value = siteData.social.instagram || '';
+            document.getElementById('updateFacebook').value = siteData.social.facebook || '';
+            adminModalElem.style.display = 'flex';
+            renderWebsite();
+            alert("Admin Login Successful!");
+        } else alert("Wrong Username or Password");
+    };
+    
+    // Forgot Password with Master Password
+    document.getElementById('forgotBtn').onclick = () => { document.getElementById('loginFormDiv').style.display = 'none'; document.getElementById('forgotFormDiv').style.display = 'block'; };
+    document.getElementById('backToLoginBtn').onclick = () => { document.getElementById('loginFormDiv').style.display = 'block'; document.getElementById('forgotFormDiv').style.display = 'none'; };
+    document.getElementById('resetPasswordBtn').onclick = () => {
+        let master = document.getElementById('masterPasswordInput').value;
+        let newPass = document.getElementById('newPasswordInput').value;
+        let confirmPass = document.getElementById('confirmPasswordInput').value;
+        if(master !== MASTER_PASSWORD) { alert("Wrong Master Password!"); return; }
+        if(newPass !== confirmPass) { alert("New passwords do not match!"); return; }
+        if(newPass.length < 4) { alert("Password must be at least 4 characters"); return; }
+        alert("Password reset successful! New password: " + newPass + "\nNote: This is frontend demo. In real system, password would be saved.");
+        document.getElementById('loginFormDiv').style.display = 'block';
+        document.getElementById('forgotFormDiv').style.display = 'none';
+        document.getElementById('masterPasswordInput').value = '';
+        document.getElementById('newPasswordInput').value = '';
+        document.getElementById('confirmPasswordInput').value = '';
+    };
+    
+    document.getElementById('saveAdminDataBtn').onclick = () => {
+        siteData.shopName = document.getElementById('updateShopName').value;
+        siteData.heroTitle = document.getElementById('updateHeroTitle').value;
+        siteData.address = document.getElementById('updateAddress').value;
+        siteData.phone = document.getElementById('updatePhone').value;
+        siteData.whatsapp = document.getElementById('updateWhatsapp').value;
+        siteData.email = document.getElementById('updateEmail').value;
+        siteData.hours = document.getElementById('updateHours').value;
+        siteData.footerText = document.getElementById('updateFooter').value;
+        siteData.social.instagram = document.getElementById('updateInstagram').value;
+        siteData.social.facebook = document.getElementById('updateFacebook').value;
+        saveData(); renderWebsite();
+        adminModalElem.style.display = 'none';
+        alert("All data saved!");
+    };
+    
+    document.getElementById('logoutAdminBtn').onclick = () => { isAdminLoggedIn = false; adminMode = false; renderWebsite(); adminModalElem.style.display = 'none'; alert("Logged out successfully!"); };
+    
+    // Booking Modal
+    const modal = document.getElementById('bookingModal');
+    const openModal = () => { renderTimeSlots(); selectedTimeSlot = ""; modal.style.display = 'flex'; };
+    document.getElementById('bookBtn').onclick = openModal;
+    document.getElementById('heroBookBtn').onclick = openModal;
+    document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
+    window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; if(e.target === loginModal) loginModal.style.display = 'none'; if(e.target === adminModalElem) adminModalElem.style.display = 'none'; };
+    window.openBookingWithService = (service) => { document.getElementById('userService').value = service; openModal(); };
+    document.getElementById('whatsappFab').onclick = () => window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20need%20information`, '_blank');
+    document.getElementById('bookingForm').onsubmit = (e) => {
+        e.preventDefault();
+        let name = document.getElementById('userName').value, phone = document.getElementById('userPhone').value, service = document.getElementById('userService').value, date = document.getElementById('bookDate').value, time = selectedTimeSlot;
+        if(!name || !phone || !date || !time) { alert("Fill all fields and select time"); return; }
+        let msg = `Hello Thakur's Barber!%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Time:* ${time}`;
+        window.open(`https://wa.me/${siteData.whatsapp}?text=${msg}`, '_blank');
+        modal.style.display = 'none';
+        e.target.reset(); selectedTimeSlot = "";
+    };
+    
+    document.getElementById('menuToggle').onclick = () => document.getElementById('mobileMenu').classList.toggle('show');
+    document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('show')));
+    
+    // PWA
+    if('serviceWorker' in navigator){
+        let swCode = `self.addEventListener('install', e => e.waitUntil(self.skipWaiting())); self.addEventListener('fetch', e => e.respondWith(fetch(e.request)));`;
+        navigator.serviceWorker.register(URL.createObjectURL(new Blob([swCode], {type:'application/javascript'}))).catch(()=>{});
+        let manifest = {name:"Thakur's Barber",short_name:"ThakurBarber",start_url:"/",display:"standalone",theme_color:"#0a0a0a",icons:[{src:"https://img.icons8.com/ios-filled/500/barber-shop.png",sizes:"192x192"}]};
+        let mLink = document.createElement('link'); mLink.rel='manifest'; mLink.href=URL.createObjectURL(new Blob([JSON.stringify(manifest)],{type:'application/json'}));
+        document.head.appendChild(mLink);
+    }
+    
+    loadData(); renderWebsite();
+</script>
 </body>
 </html>
 ```
