@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calicutz Premium Barber Experience</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarberShop",
+      "name": "Calicutz Premium Barber",
+      "image": "https://u-tv.pages.dev/assets/icons/logo.png",
+      "url": "https://u-tv.pages.dev",
+      "telephone": "+521234567890",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Reforma Central #405",
+        "addressLocality": "Ciudad de México",
+        "postalCode": "06000",
+        "addressCountry": "MX"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#home" class="logo">CALICUTZ</a>
+        <a href="https://wa.me/521234567890" class="quick-book-btn">Book Now</a>
+    </header>
+
+    <section id="home">
+        <h1>Identity Designer</h1>
+        <p class="section-subtitle">Luxury cutting architecture and precision beard mapping engineered for the elite gentleman.</p>
+        <a href="https://wa.me/521234567890" class="cta-btn">AGENDA TU CITA →</a>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-subtitle">Toca una categoría para desplegar opciones.</p>
+        <div class="divider"></div>
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)"><span>💇‍♂️ Haircuts Node</span><span>▼</span></div>
+                <div class="accordion-content">
+                    <div class="service-row">
+                        <div><span class="service-name">Corte Clásico</span><span class="service-time">⏱️ 30 min • Incluye lavado</span></div>
+                        <span class="service-price">$250</span>
+                    </div>
+                    <div class="service-row">
+                        <div><span class="service-name">Skin Fade High</span><span class="service-time">⏱️ 45 min • Con navaja</span></div>
+                        <span class="service-price">$290</span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)"><span>🧔 Beard Mapping</span><span>▼</span></div>
+                <div class="accordion-content">
+                    <div class="service-row">
+                        <div><span class="service-name">Perfilado Express</span><span class="service-time">⏱️ 20 min • Líneas limpias</span></div>
+                        <span class="service-price">$180</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="combos">
+        <h2 class="section-title">Paquetes</h2>
+        <p class="section-subtitle">Desliza de forma horizontal para explorar combos.</p>
+        <div class="divider"></div>
+        <div class="swiper-container">
+            <div class="combo-card">
+                <span class="popular-badge">Popular</span>
+                <h3 class="combo-title">Combo Ejecutivo</h3>
+                <p class="combo-desc">Corte de Pelo + Barba Ritual + Masaje Capilar</p>
+                <span class="combo-price">$380</span>
+            </div>
+            <div class="combo-card">
+                <h3 class="combo-title">Combo Urbano</h3>
+                <p class="combo-desc">Skin Fade Extremo + Diseño Lineal de Cejas</p>
+                <span class="combo-price">$320</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff">
+        <h2 class="section-title">Master Barbers</h2>
+        <p class="section-subtitle">Ingenieros visuales certificados a tu disposición.</p>
+        <div class="divider"></div>
+        <div class="grid-2col">
+            <div class="staff-card"><div class="avatar">CM</div><h4>Carlos M.</h4><p class="staff-spec">Fades Expert</p></div>
+            <div class="staff-card"><div class="avatar">JR</div><h4>Javier R.</h4><p class="staff-spec">Razor Master</p></div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">Galería</h2>
+        <p class="section-subtitle">Trabajos de diseño real tomados en el estudio.</p>
+        <div class="divider"></div>
+        <div class="grid-2col">
+            <div class="gallery-box">📸 Mid Fade</div>
+            <div class="gallery-box">📸 Beard Trim</div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">Productos</h2>
+        <p class="section-subtitle">Línea cosmética disponible en sucursal.</p>
+        <div class="divider"></div>
+        <div class="grid-2col">
+            <div class="product-card">
+                <h4>Gold Matte Wax</h4>
+                <p class="prod-price">$210</p>
+                <a href="https://wa.me/521234567890?text=CeraMatte" class="prod-btn">Comprar</a>
+            </div>
+            <div class="product-card">
+                <h4>Beard Serum</h4>
+                <p class="prod-price">$190</p>
+                <a href="https://wa.me/521234567890?text=AceiteBeard" class="prod-btn">Comprar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2 class="section-title">Opiniones</h2>
+        <p class="section-subtitle">Calificaciones extraídas de perfiles locales.</p>
+        <div class="divider"></div>
+        <div class="review-card">
+            <p class="review-text">"La atención de Carlos es impecable. El ritual de toalla caliente vale cada centavo."</p>
+            <span class="review-author">⭐⭐⭐⭐⭐ — Alejandro R.</span>
+        </div>
+    </section>
+
+    <section id="philosophy">
+        <h2 class="section-title">Filosofía</h2>
+        <p class="section-subtitle">Protocolos de higiene y geometría facial.</p>
+        <div class="divider"></div>
+        <p class="philosophy-text">
+            No ejecutamos cortes rápidos automatizados. Resguardamos un espacio de confort donde cada herramienta pasa por un ciclo de desinfección completo.
+        </p>
+    </section>
+
+    <section id="horary">
+        <h2 class="section-title">Horarios</h2>
+        <div class="status-wrapper"><span class="status-badge" id="live-status">● OPEN NOW</span></div>
+        <div class="time-container">
+            <div class="time-row" id="day-mon"><span>Lunes a Viernes</span><span>09:00 - 21:00</span></div>
+            <div class="time-row" id="day-sat"><span>Sábado</span><span>09:00 - 18:00</span></div>
+            <div class="time-row day-closed"><span>Domingo</span><span>Cerrado</span></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Ubicación</h2>
+        <p class="section-subtitle">Acceso directo en un solo toque.</p>
+        <div class="divider"></div>
+        <div class="action-grid">
+            <a href="https://maps.google.com" class="action-link" target="_blank">🗺️ Open Maps</a>
+            <a href="tel:+521234567890" class="action-link">📞 Llamar Directo</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/521234567890" class="whatsapp-fab" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.411 0 11.973 0c3.178.001 6.165 1.24 8.413 3.488 2.248 2.248 3.487 5.236 3.487 8.414 0 6.557-5.351 11.907-11.91 11.907-2.013-.001-3.992-.512-5.748-1.488L0 24zm6.266-4.234l.37.22c1.553.922 3.33 1.409 5.15 1.41 5.451 0 9.886-4.434 9.889-9.887.002-2.642-1.026-5.127-2.89-6.991C17.02 2.654 14.536 1.626 11.9 1.626c-5.452 0-9.887 4.434-9.89 9.889-.001 1.902.519 3.757 1.503 5.378l.243.398-.99 3.619 3.7-1.144zM17.52 14.3c-.3-.149-1.777-.876-2.047-.975-.27-.099-.467-.149-.663.149-.196.297-.759.975-.931 1.173-.171.197-.343.223-.643.074-.3-.149-1.265-.466-2.41-1.487-.893-.797-1.496-1.782-1.671-2.08-.175-.299-.019-.461.13-.61.135-.133.3-.349.45-.523.15-.174.2-.298.3-.497.1-.198.05-.372-.025-.521-.075-.149-.663-1.597-.908-2.193-.239-.574-.482-.497-.663-.506-.17-.008-.366-.01-.562-.01-.197 0-.518.074-.79.372-.271.297-1.037 1.015-1.037 2.479 0 1.464 1.066 2.879 1.214 3.077.149.198 2.098 3.2 5.083 4.492.71.307 1.264.49 1.696.629.714.227 1.365.195 1.88.117.573-.087 1.777-.726 2.026-1.43.248-.704.248-1.306.173-1.43-.076-.124-.272-.198-.572-.347z"/></svg>
+    </a>
+
+    <footer class="footer">
+        <p>© 2026 CALICUTZ Premium Network.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
