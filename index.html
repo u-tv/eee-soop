@@ -43,21 +43,25 @@
         .hero-content { text-align: center; }
         .hero-content h1 { font-size: clamp(2.2rem,8vw,4.5rem); font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; background: linear-gradient(135deg,#FFD97A,#b87c0c); -webkit-background-clip: text; background-clip: text; color: transparent; }
         .btn-gold { background: #e4b53c; border: none; padding: 12px 32px; font-weight: 700; border-radius: 60px; font-size: 0.95rem; margin-top: 1rem; cursor: pointer; color: #000; transition: 0.2s; }
-        .services-grid, .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+        
+        .services-grid, .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
         .service-card, .product-card { background: #121212; border-radius: 28px; padding: 1.5rem; text-align: center; border: 1px solid #2a2a2a; position: relative; transition: 0.3s; }
         .service-card i, .product-card i { font-size: 2.2rem; color: #e4b53c; margin-bottom: 0.8rem; }
-        .price-tag { font-size: 1.4rem; font-weight: 700; color: #e4b53c; margin-top: 0.5rem; }
+        .price-tag { font-size: 1.3rem; font-weight: 700; color: #e4b53c; margin-top: 0.5rem; }
+        .quantity-badge { background: #2c2c2c; padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; display: inline-block; margin-top: 5px; }
         .delete-item, .edit-item { position: absolute; top: 10px; background: #ff4444; color: white; border: none; border-radius: 50%; width: 26px; height: 26px; cursor: pointer; font-size: 11px; display: none; align-items: center; justify-content: center; z-index: 10; }
         .delete-item { right: 10px; }
         .edit-item { right: 42px; background: #e4b53c; color: #000; }
         .admin-mode .delete-item, .admin-mode .edit-item { display: flex; }
-        .add-forms-container { background: #121212; border-radius: 28px; padding: 1.2rem; margin-bottom: 2rem; display: none; flex-direction: column; gap: 1rem; }
+        
+        .add-forms-container { background: #121212; border-radius: 28px; padding: 1.5rem; margin-bottom: 2rem; display: none; flex-direction: column; gap: 1.2rem; }
         .admin-mode .add-forms-container { display: flex; }
-        .form-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-        .form-row input, .form-row select, .form-row textarea { padding: 10px; border-radius: 12px; border: none; background: #2c2c2c; color: white; flex: 1; min-width: 150px; }
+        .form-row { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+        .form-row input, .form-row select, .form-row textarea { padding: 10px 14px; border-radius: 14px; border: none; background: #2c2c2c; color: white; flex: 1; min-width: 160px; font-size: 0.9rem; }
         .form-row textarea { min-width: 200px; }
-        .add-btn { background: #e4b53c; padding: 10px 20px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        .add-btn { background: #e4b53c; padding: 10px 24px; border: none; border-radius: 14px; font-weight: bold; cursor: pointer; font-size: 0.9rem; }
         .section-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+        
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; }
         .team-card { background: #111; border-radius: 28px; padding: 1.2rem; text-align: center; }
         .team-avatar { width: 90px; height: 90px; background: #2a2a2a; border-radius: 50%; margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; border: 2px solid #e4b53c; }
@@ -67,11 +71,12 @@
         .combo-card { background: #121212; border-radius: 28px; padding: 1.5rem; text-align: center; border: 1px solid #e4b53c30; }
         .combo-price { font-size: 1.8rem; font-weight: 800; color: #e4b53c; }
         .time-slots { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0; }
-        .time-slot { background: #2c2c2c; padding: 8px 14px; border-radius: 25px; font-size: 0.8rem; cursor: pointer; border: none; color: #fff; transition: 0.2s; }
+        .time-slot { background: #2c2c2c; padding: 8px 14px; border-radius: 25px; font-size: 0.8rem; cursor: pointer; border: none; color: #fff; }
         .time-slot:hover, .time-slot.selected { background: #e4b53c; color: #000; }
-        .modal, .login-modal, .admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); justify-content: center; align-items: center; z-index: 2000; }
-        .modal-content, .login-content, .admin-content { background: #1a1a1a; max-width: 500px; width: 90%; border-radius: 36px; padding: 1.8rem; max-height: 85vh; overflow-y: auto; }
-        .modal-content input, .login-content input, .admin-content input, .admin-content textarea { width: 100%; margin: 10px 0; padding: 12px; border-radius: 30px; background: #2c2c2c; border: none; color: #fff; }
+        .modal, .login-modal, .admin-modal, .feedback-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); justify-content: center; align-items: center; z-index: 2000; }
+        .modal-content, .login-content, .admin-content, .feedback-content { background: #1a1a1a; max-width: 500px; width: 90%; border-radius: 36px; padding: 1.8rem; max-height: 85vh; overflow-y: auto; }
+        .modal-content input, .login-content input, .admin-content input, .admin-content textarea, .feedback-content input, .feedback-content textarea, .feedback-content select { width: 100%; margin: 10px 0; padding: 12px; border-radius: 30px; background: #2c2c2c; border: none; color: #fff; }
+        .feedback-content textarea { border-radius: 20px; resize: vertical; }
         .guide-section { background: #121212; border-radius: 28px; padding: 1.2rem; margin: 1rem 0; }
         .guide-step { display: flex; align-items: center; gap: 0.8rem; margin: 0.8rem 0; padding: 0.7rem; background: #1a1a1a; border-radius: 18px; flex-wrap: wrap; }
         .guide-number { width: 32px; height: 32px; background: #e4b53c; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
@@ -85,6 +90,12 @@
         .live-status { background: #1e5a2e; display: inline-block; padding: 0.2rem 1rem; border-radius: 40px; font-size: 0.75rem; margin-bottom: 0.8rem; }
         .hours-list p { padding: 0.6rem 0; border-bottom: 1px solid #222; display: flex; justify-content: space-between; }
         .save-btn { background: #e4b53c; width: 100%; padding: 12px; border-radius: 30px; font-weight: bold; border: none; cursor: pointer; margin-top: 1rem; }
+        .feedback-btn { background: #2c2c2c; color: #e4b53c; border: 1px solid #e4b53c; }
+        .reviews-container { margin-top: 1rem; max-height: 300px; overflow-y: auto; }
+        .review-item { background: #1a1a1a; border-radius: 20px; padding: 1rem; margin-bottom: 0.8rem; border-left: 3px solid #e4b53c; }
+        .review-stars { color: #e4b53c; margin-bottom: 0.3rem; }
+        .review-text { font-size: 0.85rem; color: #ccc; }
+        .review-name { font-size: 0.7rem; color: #888; margin-top: 0.3rem; }
         @media (min-width: 768px) { .menu-icon { display: none; } .desktop-nav { display: flex; } }
         @media (max-width: 767px) { .team-grid { grid-template-columns: repeat(2,1fr); } .form-row { flex-direction: column; } .form-row input, .form-row select, .form-row textarea { width: 100%; } }
         .help-email { text-align: center; padding: 0.8rem; background: #1a1a1a; border-radius: 20px; margin-top: 1rem; }
@@ -99,23 +110,23 @@
     <div class="desktop-nav" id="desktopNav">
         <a href="#home">HOME</a> <a href="#services">SERVICES</a> <a href="#products">PRODUCTS</a>
         <a href="#combos">COMBOS</a> <a href="#team">BARBERS</a> <a href="#gallery">GALLERY</a>
-        <a href="#guide">GUIDE</a> <a href="#hours">HOURS</a> <a href="#contact">CONTACT</a>
+        <a href="#feedback">REVIEWS</a> <a href="#guide">GUIDE</a> <a href="#hours">HOURS</a> <a href="#contact">CONTACT</a>
     </div>
     <div><button class="admin-btn" id="adminPanelBtn"><i class="fas fa-shield-alt"></i> ADMIN</button><button class="book-now-btn" id="bookBtn"><i class="fas fa-calendar"></i> BOOK</button></div>
 </div>
-<div class="mobile-menu" id="mobileMenu"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#products">PRODUCTS</a><a href="#combos">COMBOS</a><a href="#team">BARBERS</a><a href="#gallery">GALLERY</a><a href="#guide">GUIDE</a><a href="#hours">HOURS</a><a href="#contact">CONTACT</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#products">PRODUCTS</a><a href="#combos">COMBOS</a><a href="#team">BARBERS</a><a href="#gallery">GALLERY</a><a href="#feedback">REVIEWS</a><a href="#guide">GUIDE</a><a href="#hours">HOURS</a><a href="#contact">CONTACT</a></div>
 
 <!-- HERO -->
 <section id="home" class="page hero-page"><div class="container hero-content"><h1 id="heroTitle">THAKUR'S<br>BARBER LOUNGE</h1><p id="heroSub">Premium Grooming | Royal Experience</p><button class="btn-gold" id="heroBookBtn">BOOK APPOINTMENT →</button></div></section>
 
-<!-- SERVICES SECTION -->
+<!-- SERVICES SECTION - UNLIMITED ADD -->
 <section id="services" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Our Services</h2></div>
-<div id="addServiceForm" class="add-forms-container"><h3>➕ Add New Service</h3><div class="form-row"><input type="text" id="newServiceName" placeholder="Service Name *"><input type="text" id="newServicePrice" placeholder="Price *"><select id="newServiceIcon"><option value="fas fa-cut">✂️ Haircut</option><option value="fas fa-beard">🧔 Beard</option><option value="fas fa-bolt">⚡ Combo</option><option value="fas fa-child">👶 Kids</option><option value="fas fa-spa">💆 Spa</option></select><input type="text" id="newServiceDesc" placeholder="Description"></div><button id="addServiceBtn" class="add-btn">➕ ADD SERVICE</button></div>
+<div id="addServiceForm" class="add-forms-container"><h3>➕ Add New Service (Unlimited)</h3><div class="form-row"><input type="text" id="newServiceName" placeholder="Service Name *"><input type="text" id="newServicePrice" placeholder="Price *"><select id="newServiceIcon"><option value="fas fa-cut">✂️ Haircut</option><option value="fas fa-beard">🧔 Beard</option><option value="fas fa-bolt">⚡ Combo</option><option value="fas fa-child">👶 Kids</option><option value="fas fa-spa">💆 Spa</option><option value="fas fa-hand-sparkles">✨ Premium</option></select><input type="text" id="newServiceDesc" placeholder="Description"></div><button id="addServiceBtn" class="add-btn">➕ ADD SERVICE</button></div>
 <div class="services-grid" id="servicesGrid"></div></div></section>
 
-<!-- PRODUCTS SECTION -->
+<!-- PRODUCTS SECTION - UNLIMITED ADD with QUANTITY -->
 <section id="products" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Premium Products</h2></div>
-<div id="addProductForm" class="add-forms-container"><h3>🛍️ Add New Product</h3><div class="form-row"><input type="text" id="newProductName" placeholder="Product Name *"><input type="text" id="newProductPrice" placeholder="Price *"><select id="newProductIcon"><option value="fas fa-jar">🧴 Wax/Gel</option><option value="fas fa-oil-can">🧴 Oil</option><option value="fas fa-cut">✂️ Tools</option><option value="fas fa-spray-can">💨 Spray</option></select><input type="text" id="newProductDesc" placeholder="Description"></div><button id="addProductBtn" class="add-btn">🛍️ ADD PRODUCT</button></div>
+<div id="addProductForm" class="add-forms-container"><h3>🛍️ Add New Product (Unlimited)</h3><div class="form-row"><input type="text" id="newProductName" placeholder="Product Name *"><input type="text" id="newProductPrice" placeholder="Price *"><input type="text" id="newProductQuantity" placeholder="Quantity (e.g., 100ml, 50g, 1pc)"><select id="newProductIcon"><option value="fas fa-jar">🧴 Wax/Gel</option><option value="fas fa-oil-can">🧴 Oil</option><option value="fas fa-cut">✂️ Tools</option><option value="fas fa-spray-can">💨 Spray</option><option value="fas fa-tag">🏷️ Other</option></select><input type="text" id="newProductDesc" placeholder="Description"></div><button id="addProductBtn" class="add-btn">🛍️ ADD PRODUCT</button></div>
 <div class="products-grid" id="productsGrid"></div></div></section>
 
 <!-- COMBOS -->
@@ -127,9 +138,15 @@
 <!-- GALLERY -->
 <section id="gallery" class="page"><div class="container"><h2 class="section-title">Our Work</h2><div class="work-gallery" id="galleryGrid"></div></div></section>
 
+<!-- FEEDBACK / REVIEWS SECTION -->
+<section id="feedback" class="page"><div class="container"><h2 class="section-title">Customer Reviews</h2>
+<div id="reviewsList" class="reviews-container"></div>
+<button id="giveFeedbackBtn" class="btn-gold" style="margin-top:1rem;">📝 Give Your Feedback</button>
+</div></section>
+
 <!-- GUIDE - Customer Only -->
 <section id="guide" class="page"><div class="container"><h2 class="section-title">📖 How To Use</h2>
-<div class="guide-section"><h3>👤 For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK" or "BOOK APPOINTMENT" button</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Select Service, Date & Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP" - Booking sent to Barber</div></div><div class="guide-step"><div class="guide-number">4</div><div>Wait for confirmation on WhatsApp</div></div></div>
+<div class="guide-section"><h3>👤 For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK" or "BOOK APPOINTMENT" button</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Select Service, Date & Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP" - Booking sent to Barber</div></div><div class="guide-step"><div class="guide-number">4</div><div>Give your feedback in Reviews section</div></div></div>
 <div class="help-email"><i class="fas fa-envelope"></i> <strong>24/7 Support:</strong> <a href="mailto:gurubhi1995@gmail.com">gurubhi1995@gmail.com</a><br><small>Response in 2-3 working days</small></div></div></section>
 
 <!-- HOURS -->
@@ -145,6 +162,10 @@
 <div id="bookingModal" class="modal"><div class="modal-content"><span id="closeModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2>📅 Book Appointment</h2>
 <form id="bookingForm"><input type="text" id="userName" placeholder="Full Name" required><input type="tel" id="userPhone" placeholder="Phone Number" required><select id="userService" required></select><input type="date" id="bookDate" required><div id="timeSlotContainer" class="time-slots"></div><input type="hidden" id="selectedTime"><button type="submit">SEND VIA WHATSAPP</button></form></div></div>
 
+<!-- FEEDBACK MODAL -->
+<div id="feedbackModal" class="feedback-modal"><div class="feedback-content"><span id="closeFeedbackModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2>📝 Share Your Experience</h2>
+<form id="feedbackForm"><input type="text" id="customerName" placeholder="Your Name *" required><select id="rating" required><option value="">Select Rating</option><option value="5">⭐⭐⭐⭐⭐ - Excellent</option><option value="4">⭐⭐⭐⭐ - Good</option><option value="3">⭐⭐⭐ - Average</option><option value="2">⭐⭐ - Poor</option><option value="1">⭐ - Very Bad</option></select><textarea id="reviewText" rows="4" placeholder="Your review *" required></textarea><button type="submit" class="save-btn">SUBMIT REVIEW</button></form></div></div>
+
 <!-- LOGIN MODAL - Owner Only -->
 <div id="loginModal" class="login-modal"><div class="login-content"><span id="closeLoginModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2>🔐 Owner Login</h2>
 <div id="loginFormDiv"><input type="text" id="loginUsername" placeholder="Username"><input type="password" id="loginPassword" placeholder="Password"><button id="loginBtn" class="save-btn">LOGIN</button><button id="forgotBtn" style="background:#444;" class="save-btn">FORGOT PASSWORD?</button></div>
@@ -157,8 +178,9 @@
 
 <script>
     // ============================================
-    // COMPLETE WORKING SYSTEM - OWNER: dhamtan / Thakur1995@
-    // MASTER PASSWORD: Thakur9728199145
+    // COMPLETE WORKING SYSTEM - UNLIMITED SERVICES & PRODUCTS
+    // Owner: dhamtan / Thakur1995@
+    // Master Password: Thakur9728199145
     // ============================================
     
     let siteData = {
@@ -177,8 +199,8 @@
             { id: "sv3", name: "Thakur Special Combo", icon: "fas fa-bolt", price: "$550", desc: "Haircut + Beard + Head Massage" }
         ],
         products: [
-            { id: "pr1", name: "Gold Matte Wax", icon: "fas fa-jar", price: "$25", desc: "Strong hold natural finish" },
-            { id: "pr2", name: "Beard Oil Premium", icon: "fas fa-oil-can", price: "$18", desc: "Softens and conditions" }
+            { id: "pr1", name: "Gold Matte Wax", icon: "fas fa-jar", price: "$25", quantity: "100g", desc: "Strong hold natural finish" },
+            { id: "pr2", name: "Beard Oil Premium", icon: "fas fa-oil-can", price: "$18", quantity: "50ml", desc: "Softens and conditions" }
         ],
         combos: [
             { name: "Executive Combo", price: "$450", desc: "Haircut + Beard", popular: true },
@@ -197,6 +219,10 @@
             "https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=600",
             "https://images.pexels.com/photos/2983469/pexels-photo-2983469.jpeg?auto=compress&cs=tinysrgb&w=600"
         ],
+        reviews: [
+            { id: "rev1", name: "Rajesh Kumar", rating: 5, text: "Excellent service! Best barber in town.", date: "2024-01-15" },
+            { id: "rev2", name: "Amit Sharma", rating: 4, text: "Good haircut, friendly staff.", date: "2024-01-10" }
+        ],
         social: { instagram: "", facebook: "" }
     };
     
@@ -209,8 +235,17 @@
     let timeSlots = ["10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM"];
     
     function generateId() { return Date.now() + Math.random().toString(36).substr(2, 8); }
-    function loadData() { let saved = localStorage.getItem('thakurBarberFinalV2'); if(saved) siteData = JSON.parse(saved); else saveData(); }
-    function saveData() { localStorage.setItem('thakurBarberFinalV2', JSON.stringify(siteData)); }
+    function loadData() { let saved = localStorage.getItem('thakurBarberFinalV3'); if(saved) siteData = JSON.parse(saved); else saveData(); }
+    function saveData() { localStorage.setItem('thakurBarberFinalV3', JSON.stringify(siteData)); }
+    
+    function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m === '&') return '&amp;'; if(m === '<') return '&lt;'; if(m === '>') return '&gt;'; return m; }); }
+    
+    function renderReviews() {
+        let html = '';
+        if(siteData.reviews.length === 0) { html = '<p style="text-align:center;opacity:0.6;">No reviews yet. Be the first to give feedback!</p>'; }
+        else { siteData.reviews.slice().reverse().forEach(r => { let stars = ''; for(let i=1;i<=5;i++) stars += i<=r.rating ? '★' : '☆'; html += `<div class="review-item"><div class="review-stars">${stars}</div><div class="review-text">${escapeHtml(r.text)}</div><div class="review-name">- ${escapeHtml(r.name)}</div></div>`; }); }
+        document.getElementById('reviewsList').innerHTML = html;
+    }
     
     function renderWebsite() {
         document.getElementById('shopName').innerText = siteData.shopName;
@@ -218,19 +253,19 @@
         document.getElementById('heroSub').innerText = siteData.heroSub;
         document.getElementById('footerText').innerHTML = siteData.footerText;
         
-        // Services
+        // Services - Unlimited
         let sHtml = '';
         siteData.services.forEach(s => {
             sHtml += `<div class="service-card"><button class="delete-item" onclick="deleteItem('service','${s.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('service','${s.id}')"><i class="fas fa-edit"></i></button><i class="${s.icon}"></i><h3>${escapeHtml(s.name)}</h3><p>${escapeHtml(s.desc)}</p><div class="price-tag">${escapeHtml(s.price)}</div></div>`;
         });
-        document.getElementById('servicesGrid').innerHTML = sHtml || '<p style="text-align:center;opacity:0.6;">No services added yet.</p>';
+        document.getElementById('servicesGrid').innerHTML = sHtml || '<p style="text-align:center;opacity:0.6;">No services added yet. Admin can add unlimited services.</p>';
         
-        // Products
+        // Products - Unlimited with Quantity
         let pHtml = '';
         siteData.products.forEach(p => {
-            pHtml += `<div class="product-card"><button class="delete-item" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('product','${p.id}')"><i class="fas fa-edit"></i></button><i class="${p.icon}"></i><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="price-tag">${escapeHtml(p.price)}</div><button class="btn-gold" style="margin-top:10px;padding:6px 16px;font-size:0.8rem;" onclick="buyProduct('${escapeHtml(p.name)} - ${escapeHtml(p.price)}')">Buy via WhatsApp</button></div>`;
+            pHtml += `<div class="product-card"><button class="delete-item" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('product','${p.id}')"><i class="fas fa-edit"></i></button><i class="${p.icon}"></i><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="price-tag">${escapeHtml(p.price)}</div><div class="quantity-badge"><i class="fas fa-box"></i> ${escapeHtml(p.quantity || 'In Stock')}</div><button class="btn-gold" style="margin-top:10px;padding:6px 16px;font-size:0.8rem;" onclick="buyProduct('${escapeHtml(p.name)} - ${escapeHtml(p.price)}')">Buy via WhatsApp</button></div>`;
         });
-        document.getElementById('productsGrid').innerHTML = pHtml || '<p style="text-align:center;opacity:0.6;">No products added yet.</p>';
+        document.getElementById('productsGrid').innerHTML = pHtml || '<p style="text-align:center;opacity:0.6;">No products added yet. Admin can add unlimited products.</p>';
         
         // Combos
         let cHtml = '';
@@ -282,30 +317,47 @@
         document.getElementById('liveStatus').innerHTML = open ? "🟢 OPEN NOW" : "⛔ CLOSED";
         document.getElementById('liveStatus').style.background = open ? "#1e5a2e" : "#c62828";
         
+        // Reviews
+        renderReviews();
+        
         if(adminMode) document.body.classList.add('admin-mode');
         else document.body.classList.remove('admin-mode');
     }
     
-    function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m === '&') return '&amp;'; if(m === '<') return '&lt;'; if(m === '>') return '&gt;'; return m; }); }
-    
-    // CRUD Operations
+    // CRUD Operations - Unlimited
     window.deleteItem = function(type, id) { if(!adminMode) return; if(confirm(`Delete this ${type}?`)) { siteData[type+'s'] = siteData[type+'s'].filter(i => i.id !== id); saveData(); renderWebsite(); alert(`✅ ${type} deleted`); } };
-    window.editItem = function(type, id) { if(!adminMode) return; let item = siteData[type+'s'].find(i => i.id === id); if(item) { let n=prompt("New name:", item.name); if(n && n.trim()) item.name=n.trim(); let p=prompt("New price:", item.price); if(p && p.trim()) item.price=p.trim(); let d=prompt("New description:", item.desc); if(d && d.trim()) item.desc=d.trim(); saveData(); renderWebsite(); alert(`✅ ${type} updated`); } };
+    window.editItem = function(type, id) { if(!adminMode) return; let item = siteData[type+'s'].find(i => i.id === id); if(item) { let n=prompt("New name:", item.name); if(n && n.trim()) item.name=n.trim(); let p=prompt("New price:", item.price); if(p && p.trim()) item.price=p.trim(); if(type==='product') { let q=prompt("New quantity:", item.quantity || ""); if(q && q.trim()) item.quantity=q.trim(); } let d=prompt("New description:", item.desc); if(d && d.trim()) item.desc=d.trim(); saveData(); renderWebsite(); alert(`✅ ${type} updated`); } };
     window.bookCombo = function(service) { document.getElementById('userService').value = service; openBookingModal(); };
     window.buyProduct = function(product) { window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20want%20to%20buy%20${encodeURIComponent(product)}`, '_blank'); };
     
-    // Add Service Unlimited
-    document.getElementById('addServiceBtn').onclick = () => { if(!adminMode) return; let n=document.getElementById('newServiceName').value.trim(); let p=document.getElementById('newServicePrice').value.trim(); let i=document.getElementById('newServiceIcon').value; let d=document.getElementById('newServiceDesc').value.trim(); if(!n||!p) { alert("⚠️ Service Name and Price required"); return; } siteData.services.push({id:generateId(), name:n, icon:i, price:p, desc:d||"Professional service"}); saveData(); renderWebsite(); document.getElementById('newServiceName').value=''; document.getElementById('newServicePrice').value=''; document.getElementById('newServiceDesc').value=''; alert("✅ Service added successfully!"); };
+    // Add Service - Unlimited
+    document.getElementById('addServiceBtn').onclick = () => { if(!adminMode) return; let n=document.getElementById('newServiceName').value.trim(); let p=document.getElementById('newServicePrice').value.trim(); let i=document.getElementById('newServiceIcon').value; let d=document.getElementById('newServiceDesc').value.trim(); if(!n||!p) { alert("⚠️ Service Name and Price required"); return; } siteData.services.push({id:generateId(), name:n, icon:i, price:p, desc:d||"Professional service"}); saveData(); renderWebsite(); document.getElementById('newServiceName').value=''; document.getElementById('newServicePrice').value=''; document.getElementById('newServiceDesc').value=''; alert("✅ Service added successfully! You can add unlimited services."); };
     
-    // Add Product Unlimited
-    document.getElementById('addProductBtn').onclick = () => { if(!adminMode) return; let n=document.getElementById('newProductName').value.trim(); let p=document.getElementById('newProductPrice').value.trim(); let i=document.getElementById('newProductIcon').value; let d=document.getElementById('newProductDesc').value.trim(); if(!n||!p) { alert("⚠️ Product Name and Price required"); return; } siteData.products.push({id:generateId(), name:n, icon:i, price:p, desc:d||"Premium product"}); saveData(); renderWebsite(); document.getElementById('newProductName').value=''; document.getElementById('newProductPrice').value=''; document.getElementById('newProductDesc').value=''; alert("✅ Product added successfully!"); };
+    // Add Product - Unlimited with Quantity
+    document.getElementById('addProductBtn').onclick = () => { if(!adminMode) return; let n=document.getElementById('newProductName').value.trim(); let p=document.getElementById('newProductPrice').value.trim(); let q=document.getElementById('newProductQuantity').value.trim(); let i=document.getElementById('newProductIcon').value; let d=document.getElementById('newProductDesc').value.trim(); if(!n||!p) { alert("⚠️ Product Name and Price required"); return; } siteData.products.push({id:generateId(), name:n, icon:i, price:p, quantity:q||"In Stock", desc:d||"Premium product"}); saveData(); renderWebsite(); document.getElementById('newProductName').value=''; document.getElementById('newProductPrice').value=''; document.getElementById('newProductQuantity').value=''; document.getElementById('newProductDesc').value=''; alert("✅ Product added successfully! You can add unlimited products."); };
+    
+    // Feedback Function
+    const feedbackModal = document.getElementById('feedbackModal');
+    document.getElementById('giveFeedbackBtn').onclick = () => { feedbackModal.style.display = 'flex'; };
+    document.getElementById('closeFeedbackModal').onclick = () => feedbackModal.style.display = 'none';
+    document.getElementById('feedbackForm').onsubmit = (e) => {
+        e.preventDefault();
+        let name = document.getElementById('customerName').value.trim();
+        let rating = parseInt(document.getElementById('rating').value);
+        let text = document.getElementById('reviewText').value.trim();
+        if(!name || !rating || !text) { alert("⚠️ Please fill all fields"); return; }
+        siteData.reviews.push({ id: generateId(), name: name, rating: rating, text: text, date: new Date().toISOString().split('T')[0] });
+        saveData(); renderReviews(); feedbackModal.style.display = 'none';
+        document.getElementById('feedbackForm').reset();
+        alert("✅ Thank you for your feedback!");
+    };
     
     function renderTimeSlots() { let html=''; timeSlots.forEach(slot=>{ html+=`<button type="button" class="time-slot" onclick="selectTime('${slot}')">${slot}</button>`; }); document.getElementById('timeSlotContainer').innerHTML=html; }
     window.selectTime = function(slot) { selectedTimeSlot=slot; document.getElementById('selectedTime').value=slot; document.querySelectorAll('.time-slot').forEach(el=>el.classList.remove('selected')); event.target.classList.add('selected'); };
     
     // Login System
     const loginModal=document.getElementById('loginModal'), adminModalElem=document.getElementById('adminModal');
-    document.getElementById('adminPanelBtn').onclick=()=>{ loginModal.style.display='flex'; document.getElementById('loginFormDiv').style.display='block'; document.getElementById('forgotFormDiv').style.display='none'; document.getElementById('loginUsername').value=''; document.getElementById('loginPassword').value=''; };
+    document.getElementById('adminPanelBtn').onclick=()=>{ loginModal.style.display='flex'; document.getElementById('loginFormDiv').style.display='block'; document.getElementById('forgotFormDiv').style.display='none'; };
     document.getElementById('closeLoginModal').onclick=()=>loginModal.style.display='none';
     document.getElementById('closeAdminModal').onclick=()=>adminModalElem.style.display='none';
     
@@ -318,7 +370,7 @@
             document.getElementById('updateWhatsapp').value=siteData.whatsapp; document.getElementById('updateEmail').value=siteData.email;
             document.getElementById('updateHours').value=siteData.hours; document.getElementById('updateFooter').value=siteData.footerText;
             document.getElementById('updateInstagram').value=siteData.social.instagram||''; document.getElementById('updateFacebook').value=siteData.social.facebook||'';
-            adminModalElem.style.display='flex'; renderWebsite(); alert("✅ Welcome Owner! You can now add/edit/delete services and products.");
+            adminModalElem.style.display='flex'; renderWebsite(); alert("✅ Welcome Owner! You can now add unlimited services and products.");
         } else alert("❌ Invalid Username or Password");
     };
     
@@ -329,9 +381,8 @@
         if(m!==MASTER_PASSWORD) { alert("❌ Wrong Master Password"); return; }
         if(n!==c) { alert("❌ Passwords do not match"); return; }
         if(n.length<4) { alert("❌ Password must be at least 4 characters"); return; }
-        alert("✅ Password reset successful!\nNew Password: "+n+"\n\nPlease login with new password.");
+        alert("✅ Password reset successful!\nNew Password: "+n);
         document.getElementById('loginFormDiv').style.display='block'; document.getElementById('forgotFormDiv').style.display='none';
-        document.getElementById('masterPasswordInput').value=''; document.getElementById('newPasswordInput').value=''; document.getElementById('confirmPasswordInput').value='';
     };
     
     document.getElementById('saveAdminDataBtn').onclick=()=>{
@@ -350,26 +401,21 @@
     function openBookingModal(){ renderTimeSlots(); selectedTimeSlot=""; document.getElementById('selectedTime').value=""; modal.style.display='flex'; }
     document.getElementById('bookBtn').onclick=openBookingModal; document.getElementById('heroBookBtn').onclick=openBookingModal;
     document.getElementById('closeModal').onclick=()=>modal.style.display='none';
-    window.onclick=(e)=>{ if(e.target===modal)modal.style.display='none'; if(e.target===loginModal)loginModal.style.display='none'; if(e.target===adminModalElem)adminModalElem.style.display='none'; };
-    document.getElementById('whatsappFab').onclick=()=>window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20need%20information%20about%20services`,'_blank');
+    window.onclick=(e)=>{ if(e.target===modal)modal.style.display='none'; if(e.target===loginModal)loginModal.style.display='none'; if(e.target===adminModalElem)adminModalElem.style.display='none'; if(e.target===feedbackModal)feedbackModal.style.display='none'; };
+    document.getElementById('whatsappFab').onclick=()=>window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20need%20information`,'_blank');
     document.getElementById('bookingForm').onsubmit=(e)=>{
         e.preventDefault(); let n=document.getElementById('userName').value.trim(), ph=document.getElementById('userPhone').value.trim();
         let sv=document.getElementById('userService').value, dt=document.getElementById('bookDate').value, tm=selectedTimeSlot;
         if(!n||!ph||!dt||!tm||!sv) { alert("⚠️ Please fill all fields and select a time slot"); return; }
-        let msg = `Hello Thakur's Barber Lounge!%0A%0A📅 NEW BOOKING REQUEST:%0A👤 Name: ${encodeURIComponent(n)}%0A📞 Phone: ${encodeURIComponent(ph)}%0A✂️ Service: ${encodeURIComponent(sv)}%0A📆 Date: ${dt}%0A⏰ Time: ${tm}%0A%0APlease confirm my booking. Thank you!`;
+        let msg = `Hello Thakur's Barber Lounge!%0A%0A📅 NEW BOOKING:%0A👤 Name: ${encodeURIComponent(n)}%0A📞 Phone: ${encodeURIComponent(ph)}%0A✂️ Service: ${encodeURIComponent(sv)}%0A📆 Date: ${dt}%0A⏰ Time: ${tm}`;
         window.open(`https://wa.me/${siteData.whatsapp}?text=${msg}`, '_blank');
-        modal.style.display='none'; e.target.reset(); selectedTimeSlot=""; alert("✅ Booking request sent! You will receive confirmation on WhatsApp.");
+        modal.style.display='none'; e.target.reset(); selectedTimeSlot=""; alert("✅ Booking sent!");
     };
     
-    // Mobile Menu
     document.getElementById('menuToggle').onclick=()=>document.getElementById('mobileMenu').classList.toggle('show');
     document.querySelectorAll('.mobile-menu a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('show')));
     
-    // PWA
-    if('serviceWorker' in navigator){
-        let swCode = `self.addEventListener('install', e => e.waitUntil(self.skipWaiting())); self.addEventListener('fetch', e => e.respondWith(fetch(e.request)));`;
-        navigator.serviceWorker.register(URL.createObjectURL(new Blob([swCode], {type:'application/javascript'}))).catch(()=>{});
-    }
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register(URL.createObjectURL(new Blob([`self.addEventListener('install',e=>e.waitUntil(self.skipWaiting()));self.addEventListener('fetch',e=>e.respondWith(fetch(e.request)));`],{type:'application/javascript'}))).catch(()=>{}); }
     
     loadData(); renderWebsite();
 </script>
