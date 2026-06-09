@@ -1,465 +1,378 @@
+```html
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Calicutz Premium Barber Experience</title>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BarberShop",
-      "name": "Calicutz Premium Barber",
-      "image": "https://u-tv.pages.dev/assets/icons/logo.png",
-      "url": "https://u-tv.pages.dev",
-      "telephone": "+521234567890",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Reforma Central #405",
-        "addressLocality": "Ciudad de México",
-        "postalCode": "06000",
-        "addressCountry": "MX"
-      }
-    }
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Thakur's Barber Lounge | Professional Grooming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-dark: #060608;
-            --bg-card: #0e0e12;
-            --primary-gold: #cca353;
-            --text-main: #ffffff;
-            --text-muted: #9fa4b0;
-            --border: rgba(204, 163, 83, 0.15);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ececec;
+            scroll-behavior: smooth;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #e4b53c; border-radius: 10px; }
 
-        /* PREMIUM FIXED NAVIGATION HEADER */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            max-width: 450px;
-            height: 65px;
-            background: rgba(6, 6, 8, 0.96);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
+        .sticky-header {
+            position: sticky; top: 0; width: 100%; background: rgba(0,0,0,0.96); backdrop-filter: blur(16px);
+            z-index: 1000; padding: 0.7rem 4%; border-bottom: 1px solid rgba(228,181,60,0.3);
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary-gold);
-            text-decoration: none;
-            letter-spacing: 1.5px;
-        }
-
-        .menu-icon {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .menu-icon span {
-            width: 24px;
-            height: 2px;
-            background-color: var(--primary-gold);
-            border-radius: 2px;
-        }
-
-        /* GLOBAL CONTAINER STRUCTURE */
-        .main-wrapper {
-            width: 100%;
-            max-width: 450px;
-            padding: 85px 20px 30px 20px; /* Top padding ensures no overlap with header */
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        /* SECTION TITLES & SEPARATORS */
-        .section-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 26px;
-            font-weight: 600;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
-        }
-
-        .section-subtitle {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 6px;
-            line-height: 1.4;
-        }
-
-        .gold-dots {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-top: 10px;
-        }
-
-        .gold-dots span {
-            width: 6px;
-            height: 6px;
-            background-color: var(--primary-gold);
-            transform: rotate(45deg);
-        }
-
-        /* CARD STYLE COMPONENT (MAN CAVE INSPIRED) */
-        .premium-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* HERO CONTAINER */
-        .hero-section {
-            padding: 40px 10px;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 38px;
-            font-weight: 700;
-            color: var(--primary-gold);
-            line-height: 1.2;
-            margin-bottom: 12px;
-        }
-
-        .action-btn {
-            background-color: var(--primary-gold);
-            color: #000000;
-            padding: 14px 36px;
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 30px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 25px;
-            letter-spacing: 0.5px;
-            transition: transform 0.2s;
-        }
-
-        /* SERVICES FLOW */
-        .item-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 4px;
-        }
-
-        .item-price {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin-bottom: 6px;
-        }
-
-        .item-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* STAFF NODES */
-        .avatar-frame {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid var(--primary-gold);
-            overflow: hidden;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #15151c;
-        }
-
-        .avatar-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .avatar-placeholder {
-            font-size: 28px;
-            color: var(--primary-gold);
-            font-weight: 700;
-        }
-
-        .staff-role {
-            font-size: 12px;
-            color: var(--primary-gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 2px;
-        }
-
-        /* PRODUCT DISPLAY CARD */
-        .product-image-box {
-            width: 100%;
-            max-width: 200px;
-            aspect-ratio: 1;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
-
-        /* TIMING CONTROL CLOCK */
-        .status-badge {
-            background: rgba(37, 211, 102, 0.1);
-            color: #25d366;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: inline-block;
-            letter-spacing: 0.5px;
-        }
-
-        .time-table {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .time-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-        }
-
-        /* ACTION MAPS HUB */
-        .map-iframe-container {
-            width: 100%;
-            height: 200px;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 16px;
-            border: 1px solid var(--border);
-        }
-
-        /* FLOATING ACTION OVERLAY BUTTON */
-        .whatsapp-fab {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 55px;
-            height: 55px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-            z-index: 999;
-        }
-        .whatsapp-fab svg { width: 26px; height: 26px; fill: #fff; }
-
-        .footer {
-            width: 100%;
-            background: #020203;
-            padding: 24px;
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-            margin-top: 20px;
-        }
+        .logo h2 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: clamp(1.2rem,5vw,1.6rem); background: linear-gradient(135deg,#f3bc5c,#c68e1a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .menu-icon { font-size: 1.5rem; cursor: pointer; color: #e4b53c; display: block; }
+        .desktop-nav { display: none; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .desktop-nav a { color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: 0.2s; }
+        .desktop-nav a:hover { color: #e4b53c; }
+        .admin-btn { background: #2c2c2c; padding: 6px 16px; border-radius: 30px; color: #e4b53c !important; cursor: pointer; border: none; font-size: 0.8rem; }
+        .book-now-btn { background: #e4b53c; padding: 8px 20px; border-radius: 40px; color: #000; font-weight: 700; cursor: pointer; border: none; }
+        .mobile-menu { display: none; flex-direction: column; background: #0a0a0a; position: absolute; top: 60px; left: 0; width: 100%; padding: 1.2rem; gap: 1rem; border-bottom: 1px solid #e4b53c; z-index: 999; }
+        .mobile-menu.show { display: flex; }
+        .mobile-menu a { color: #fff; text-decoration: none; padding: 6px 0; }
+        .page { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 80px 4% 60px; border-bottom: 1px solid rgba(255,215,140,0.08); }
+        .container { max-width: 1300px; width: 100%; margin: 0 auto; }
+        .section-title { font-size: clamp(1.6rem,5vw,2.3rem); font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 1.8rem; position: relative; display: inline-block; }
+        .section-title:after { content: ''; width: 55px; height: 3px; background: #e4b53c; position: absolute; bottom: -8px; left: 0; }
+        .hero-page { background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/3998424/pexels-photo-3998424.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; }
+        .hero-content { text-align: center; }
+        .hero-content h1 { font-size: clamp(2.2rem,8vw,4.5rem); font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; background: linear-gradient(135deg,#FFD97A,#b87c0c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .btn-gold { background: #e4b53c; border: none; padding: 12px 32px; font-weight: 700; border-radius: 60px; font-size: 0.95rem; margin-top: 1rem; cursor: pointer; color: #000; transition: 0.2s; }
+        .services-grid, .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+        .service-card, .product-card { background: #121212; border-radius: 28px; padding: 1.5rem; text-align: center; border: 1px solid #2a2a2a; position: relative; transition: 0.3s; }
+        .service-card i, .product-card i { font-size: 2.2rem; color: #e4b53c; margin-bottom: 0.8rem; }
+        .price-tag { font-size: 1.4rem; font-weight: 700; color: #e4b53c; margin-top: 0.5rem; }
+        .delete-item, .edit-item { position: absolute; top: 10px; background: #ff4444; color: white; border: none; border-radius: 50%; width: 26px; height: 26px; cursor: pointer; font-size: 11px; display: none; align-items: center; justify-content: center; z-index: 10; }
+        .delete-item { right: 10px; }
+        .edit-item { right: 42px; background: #e4b53c; color: #000; }
+        .admin-mode .delete-item, .admin-mode .edit-item { display: flex; }
+        .add-forms-container { background: #121212; border-radius: 28px; padding: 1.2rem; margin-bottom: 2rem; display: none; flex-direction: column; gap: 1rem; }
+        .admin-mode .add-forms-container { display: flex; }
+        .form-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+        .form-row input, .form-row select, .form-row textarea { padding: 10px; border-radius: 12px; border: none; background: #2c2c2c; color: white; flex: 1; min-width: 150px; }
+        .form-row textarea { min-width: 200px; }
+        .add-btn { background: #e4b53c; padding: 10px 20px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; }
+        .team-card { background: #111; border-radius: 28px; padding: 1.2rem; text-align: center; }
+        .team-avatar { width: 90px; height: 90px; background: #2a2a2a; border-radius: 50%; margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; border: 2px solid #e4b53c; }
+        .work-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+        .work-card { background: #111; border-radius: 24px; overflow: hidden; }
+        .work-card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .combo-card { background: #121212; border-radius: 28px; padding: 1.5rem; text-align: center; border: 1px solid #e4b53c30; }
+        .combo-price { font-size: 1.8rem; font-weight: 800; color: #e4b53c; }
+        .time-slots { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0; }
+        .time-slot { background: #2c2c2c; padding: 8px 14px; border-radius: 25px; font-size: 0.8rem; cursor: pointer; border: none; color: #fff; transition: 0.2s; }
+        .time-slot:hover, .time-slot.selected { background: #e4b53c; color: #000; }
+        .modal, .login-modal, .admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); justify-content: center; align-items: center; z-index: 2000; }
+        .modal-content, .login-content, .admin-content { background: #1a1a1a; max-width: 500px; width: 90%; border-radius: 36px; padding: 1.8rem; max-height: 85vh; overflow-y: auto; }
+        .modal-content input, .login-content input, .admin-content input, .admin-content textarea { width: 100%; margin: 10px 0; padding: 12px; border-radius: 30px; background: #2c2c2c; border: none; color: #fff; }
+        .guide-section { background: #121212; border-radius: 28px; padding: 1.2rem; margin: 1rem 0; }
+        .guide-step { display: flex; align-items: center; gap: 0.8rem; margin: 0.8rem 0; padding: 0.7rem; background: #1a1a1a; border-radius: 18px; flex-wrap: wrap; }
+        .guide-number { width: 32px; height: 32px; background: #e4b53c; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .social-icons { display: flex; justify-content: center; gap: 1rem; margin: 1.2rem 0; }
+        .social-icon { width: 42px; height: 42px; background: #2c2c2c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #e4b53c; text-decoration: none; transition: 0.3s; }
+        .social-icon:hover { background: #e4b53c; color: #000; }
+        .whatsapp-fab { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; color: white; z-index: 99; cursor: pointer; }
+        footer { background: #020202; padding: 1.5rem; text-align: center; font-size: 0.7rem; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+        .contact-card { background: #111; border-radius: 24px; padding: 1.2rem; text-align: center; }
+        .live-status { background: #1e5a2e; display: inline-block; padding: 0.2rem 1rem; border-radius: 40px; font-size: 0.75rem; margin-bottom: 0.8rem; }
+        .hours-list p { padding: 0.6rem 0; border-bottom: 1px solid #222; display: flex; justify-content: space-between; }
+        .save-btn { background: #e4b53c; width: 100%; padding: 12px; border-radius: 30px; font-weight: bold; border: none; cursor: pointer; margin-top: 1rem; }
+        @media (min-width: 768px) { .menu-icon { display: none; } .desktop-nav { display: flex; } }
+        @media (max-width: 767px) { .team-grid { grid-template-columns: repeat(2,1fr); } .form-row { flex-direction: column; } .form-row input, .form-row select, .form-row textarea { width: 100%; } }
+        .help-email { text-align: center; padding: 0.8rem; background: #1a1a1a; border-radius: 20px; margin-top: 1rem; }
+        .combos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <a href="#" class="logo">CALICUTZ</a>
-        <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
+<div class="sticky-header">
+    <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
+    <div class="logo"><h2 id="shopName">THAKUR'S BARBER</h2></div>
+    <div class="desktop-nav" id="desktopNav">
+        <a href="#home">HOME</a> <a href="#services">SERVICES</a> <a href="#products">PRODUCTS</a>
+        <a href="#combos">COMBOS</a> <a href="#team">BARBERS</a> <a href="#gallery">GALLERY</a>
+        <a href="#guide">GUIDE</a> <a href="#hours">HOURS</a> <a href="#contact">CONTACT</a>
+    </div>
+    <div><button class="admin-btn" id="adminPanelBtn"><i class="fas fa-shield-alt"></i> ADMIN</button><button class="book-now-btn" id="bookBtn"><i class="fas fa-calendar"></i> BOOK</button></div>
+</div>
+<div class="mobile-menu" id="mobileMenu"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#products">PRODUCTS</a><a href="#combos">COMBOS</a><a href="#team">BARBERS</a><a href="#gallery">GALLERY</a><a href="#guide">GUIDE</a><a href="#hours">HOURS</a><a href="#contact">CONTACT</a></div>
 
-    <main class="main-wrapper">
+<!-- HERO -->
+<section id="home" class="page hero-page"><div class="container hero-content"><h1 id="heroTitle">THAKUR'S<br>BARBER LOUNGE</h1><p id="heroSub">Premium Grooming | Royal Experience</p><button class="btn-gold" id="heroBookBtn">BOOK APPOINTMENT →</button></div></section>
 
-        <section class="hero-section">
-            <h1 class="hero-title">Calicutz<br>Barber<br>Experience</h1>
-            <p class="section-subtitle">Precision, style and tradition in the heart of Mexico</p>
-            <a href="https://wa.me/521234567890" class="action-btn">Agenda tu cita →</a>
-        </section>
+<!-- SERVICES SECTION -->
+<section id="services" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Our Services</h2></div>
+<div id="addServiceForm" class="add-forms-container"><h3>➕ Add New Service</h3><div class="form-row"><input type="text" id="newServiceName" placeholder="Service Name *"><input type="text" id="newServicePrice" placeholder="Price *"><select id="newServiceIcon"><option value="fas fa-cut">✂️ Haircut</option><option value="fas fa-beard">🧔 Beard</option><option value="fas fa-bolt">⚡ Combo</option><option value="fas fa-child">👶 Kids</option><option value="fas fa-spa">💆 Spa</option></select><input type="text" id="newServiceDesc" placeholder="Description"></div><button id="addServiceBtn" class="add-btn">➕ ADD SERVICE</button></div>
+<div class="services-grid" id="servicesGrid"></div></div></section>
 
-        <section id="services">
-            <div class="section-header">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <div class="gold-dots"><span></span><span></span><span></span></div>
-                <p class="section-subtitle">A continuación te mostramos los servicios que realizamos</p>
-            </div>
+<!-- PRODUCTS SECTION -->
+<section id="products" class="page"><div class="container"><div class="section-header"><h2 class="section-title">Premium Products</h2></div>
+<div id="addProductForm" class="add-forms-container"><h3>🛍️ Add New Product</h3><div class="form-row"><input type="text" id="newProductName" placeholder="Product Name *"><input type="text" id="newProductPrice" placeholder="Price *"><select id="newProductIcon"><option value="fas fa-jar">🧴 Wax/Gel</option><option value="fas fa-oil-can">🧴 Oil</option><option value="fas fa-cut">✂️ Tools</option><option value="fas fa-spray-can">💨 Spray</option></select><input type="text" id="newProductDesc" placeholder="Description"></div><button id="addProductBtn" class="add-btn">🛍️ ADD PRODUCT</button></div>
+<div class="products-grid" id="productsGrid"></div></div></section>
 
-            <div class="premium-card">
-                <h3 class="item-title">Corte</h3>
-                <span class="item-price">$250</span>
-                <p class="item-desc">Corte de cabello premium diseñado a tu medida. Incluye lavado.</p>
-            </div>
+<!-- COMBOS -->
+<section id="combos" class="page"><div class="container"><h2 class="section-title">Exclusive Combos</h2><div id="combosGrid" class="combos-container"></div></div></section>
 
-            <div class="premium-card">
-                <h3 class="item-title">Barba</h3>
-                <span class="item-price">$180</span>
-                <p class="item-desc">Perfilado premium con navaja libre y ritual de toalla caliente.</p>
-            </div>
+<!-- TEAM -->
+<section id="team" class="page"><div class="container"><h2 class="section-title">Master Barbers</h2><div class="team-grid" id="teamGrid"></div></div></section>
 
-            <div class="premium-card">
-                <h3 class="item-title">Combo</h3>
-                <span class="item-price">$380</span>
-                <p class="item-desc">Corte de Pelo + Barba Ritual. Ahorra $50 en tu experiencia global.</p>
-            </div>
-        </section>
+<!-- GALLERY -->
+<section id="gallery" class="page"><div class="container"><h2 class="section-title">Our Work</h2><div class="work-gallery" id="galleryGrid"></div></div></section>
 
-        <section id="staff">
-            <div class="section-header">
-                <h2 class="section-title">Equipo de trabajo</h2>
-                <div class="gold-dots"><span></span><span></span><span></span></div>
-                <p class="section-subtitle">Contamos con un grupo de trabajo con amplia experiencia</p>
-            </div>
+<!-- GUIDE - Customer Only -->
+<section id="guide" class="page"><div class="container"><h2 class="section-title">📖 How To Use</h2>
+<div class="guide-section"><h3>👤 For Customers</h3><div class="guide-step"><div class="guide-number">1</div><div>Click "BOOK" or "BOOK APPOINTMENT" button</div></div><div class="guide-step"><div class="guide-number">2</div><div>Fill Name, Phone, Select Service, Date & Time</div></div><div class="guide-step"><div class="guide-number">3</div><div>Click "SEND VIA WHATSAPP" - Booking sent to Barber</div></div><div class="guide-step"><div class="guide-number">4</div><div>Wait for confirmation on WhatsApp</div></div></div>
+<div class="help-email"><i class="fas fa-envelope"></i> <strong>24/7 Support:</strong> <a href="mailto:gurubhi1995@gmail.com">gurubhi1995@gmail.com</a><br><small>Response in 2-3 working days</small></div></div></section>
 
-            <div class="premium-card">
-                <div class="avatar-frame">
-                    <div class="avatar-placeholder">U</div>
-                </div>
-                <h3 class="item-title">URIEL</h3>
-                <span class="staff-role">Master Barber</span>
-            </div>
+<!-- HOURS -->
+<section id="hours" class="page"><div class="container"><h2 class="section-title">Working Hours</h2><div><span class="live-status" id="liveStatus">🔴 Checking...</span></div><div class="hours-list" id="hoursList"></div></div></section>
 
-            <div class="premium-card">
-                <div class="avatar-frame">
-                    <div class="avatar-placeholder">M</div>
-                </div>
-                <h3 class="item-title">MAX</h3>
-                <span class="staff-role">Master Barber</span>
-            </div>
-        </section>
+<!-- CONTACT -->
+<section id="contact" class="page"><div class="container"><h2 class="section-title">Contact Us</h2><div class="contact-grid" id="contactGrid"></div><div class="social-icons" id="socialIcons"></div></div></section>
 
-        <section id="products">
-            <div class="section-header">
-                <h2 class="section-title">Productos Premium</h2>
-                <div class="gold-dots"><span></span><span></span><span></span></div>
-            </div>
+<footer><p id="footerText">© 2026 THAKUR'S BARBER LOUNGE — All Rights Reserved</p></footer>
+<div class="whatsapp-fab" id="whatsappFab"><i class="fab fa-whatsapp"></i></div>
 
-            <div class="premium-card">
-                <div class="product-image-box">🧴</div>
-                <h3 class="item-title">Cera Matte Clay</h3>
-                <span class="item-price">$210</span>
-                <a href="https://wa.me/521234567890?text=CeraMatte" class="action-btn" style="margin-top:15px; padding:8px 24px; font-size:12px;">Comprar</a>
-            </div>
-        </section>
+<!-- BOOKING MODAL -->
+<div id="bookingModal" class="modal"><div class="modal-content"><span id="closeModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2>📅 Book Appointment</h2>
+<form id="bookingForm"><input type="text" id="userName" placeholder="Full Name" required><input type="tel" id="userPhone" placeholder="Phone Number" required><select id="userService" required></select><input type="date" id="bookDate" required><div id="timeSlotContainer" class="time-slots"></div><input type="hidden" id="selectedTime"><button type="submit">SEND VIA WHATSAPP</button></form></div></div>
 
-        <section id="horary">
-            <div class="section-header">
-                <h2 class="section-title">Horarios</h2>
-                <div class="gold-dots"><span></span><span></span><span></span></div>
-            </div>
+<!-- LOGIN MODAL - Owner Only -->
+<div id="loginModal" class="login-modal"><div class="login-content"><span id="closeLoginModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2>🔐 Owner Login</h2>
+<div id="loginFormDiv"><input type="text" id="loginUsername" placeholder="Username"><input type="password" id="loginPassword" placeholder="Password"><button id="loginBtn" class="save-btn">LOGIN</button><button id="forgotBtn" style="background:#444;" class="save-btn">FORGOT PASSWORD?</button></div>
+<div id="forgotFormDiv" style="display:none;"><input type="password" id="masterPasswordInput" placeholder="Master Password"><input type="password" id="newPasswordInput" placeholder="New Password"><input type="password" id="confirmPasswordInput" placeholder="Confirm Password"><button id="resetPasswordBtn" class="save-btn">RESET PASSWORD</button><button id="backToLoginBtn" style="background:#444;" class="save-btn">BACK TO LOGIN</button></div>
+</div></div>
 
-            <div class="premium-card">
-                <span class="status-badge" id="live-status">● OPEN NOW</span>
-                <div class="time-table">
-                    <div class="time-row" id="day-mon"><span>Lunes a Viernes</span><span>11:00 - 20:00</span></div>
-                    <div class="time-row" id="day-sat"><span>Sábado</span><span>09:00 - 16:00</span></div>
-                    <div class="time-row" style="color:#ff4d5a; border-bottom:none;"><span>Domingo</span><span>Cerrado</span></div>
-                </div>
-            </div>
-        </section>
+<!-- ADMIN MODAL - Owner Panel -->
+<div id="adminModal" class="admin-modal"><div class="admin-content"><span id="closeAdminModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span><h2>⚙️ Owner Panel</h2>
+<div><label>Shop Name:</label><input type="text" id="updateShopName"><label>Hero Title:</label><input type="text" id="updateHeroTitle"><label>Address:</label><textarea id="updateAddress" rows="2"></textarea><label>Phone:</label><input type="text" id="updatePhone"><label>WhatsApp (digits):</label><input type="text" id="updateWhatsapp"><label>Email:</label><input type="text" id="updateEmail"><label>Hours:</label><textarea id="updateHours" rows="2"></textarea><label>Footer:</label><input type="text" id="updateFooter"><h3>Social Media</h3><label>Instagram URL:</label><input type="text" id="updateInstagram"><label>Facebook URL:</label><input type="text" id="updateFacebook"><button id="saveAdminDataBtn" class="save-btn">💾 SAVE ALL CHANGES</button><button id="logoutAdminBtn" style="background:#c62828;" class="save-btn">🚪 LOGOUT</button></div></div></div>
 
-        <section id="location">
-            <div class="section-header">
-                <h2 class="section-title">Ubicación</h2>
-                <div class="gold-dots"><span></span><span></span><span></span></div>
-            </div>
-
-            <div class="premium-card">
-                <div class="map-iframe-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5323533946257!2d-99.1820412!3d19.4326077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzU3LjQiTiA5OcKwMTAnNTUuNFCX!5e0!3m2!1ses!2smx!4v1620000000000!5m2!1ses!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <p class="item-desc" style="margin-bottom: 15px;">Av. Reforma Central #405, Col. Anzures, CDMX</p>
-                <a href="https://maps.google.com" class="action-btn" target="_blank" style="margin-top:0; padding:10px 24px; font-size:13px;">Abrir en Maps 🗺️</a>
-            </div>
-        </section>
-
-    </main>
-
-    <a href="https://wa.me/521234567890" class="whatsapp-fab" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.411 0 11.973 0c3.178.001 6.165 1.24 8.413 3.488 2.248 2.248 3.487 5.236 3.487 8.414 0 6.557-5.351 11.907-11.91 11.907-2.013-.001-3.992-.512-5.748-1.488L0 24zm6.266-4.234l.37.22c1.553.922 3.33 1.409 5.15 1.41 5.451 0 9.886-4.434 9.889-9.887.002-2.642-1.026-5.127-2.89-6.991C17.02 2.654 14.536 1.626 11.9 1.626c-5.452 0-9.887 4.434-9.89 9.889-.001 1.902.519 3.757 1.503 5.378l.243.398-.99 3.619 3.7-1.144zM17.52 14.3c-.3-.149-1.777-.876-2.047-.975-.27-.099-.467-.149-.663.149-.196.297-.759.975-.931 1.173-.171.197-.343.223-.643.074-.3-.149-1.265-.466-2.41-1.487-.893-.797-1.496-1.782-1.671-2.08-.175-.299-.019-.461.13-.61.135-.133.3-.349.45-.523.15-.174.2-.298.3-.497.1-.198.05-.372-.025-.521-.075-.149-.663-1.597-.908-2.193-.239-.574-.482-.497-.663-.506-.17-.008-.366-.01-.562-.01-.197 0-.518.074-.79.372-.271.297-1.037 1.015-1.037 2.479 0 1.464 1.066 2.879 1.214 3.077.149.198 2.098 3.2 5.083 4.492.71.307 1.264.49 1.696.629.714.227 1.365.195 1.88.117.573-.087 1.777-.726 2.026-1.43.248-.704.248-1.306.173-1.43-.076-.124-.272-.198-.572-.347z"/></svg>
-    </a>
-
-    <footer class="footer">
-        <p>© 2026 CALICUTZ Premium Network.</p>
-    </footer>
-
-    <script>
-        // LIVE TIME LOGIC COUNTER
-        function computeLiveStatus() {
-            const now = new Date();
-            const currentDay = now.getDay(); 
-            const hour = now.getHours();
-            const statusBadge = document.getElementById('live-status');
-
-            if(currentDay >= 1 && currentDay <= 5) {
-                document.getElementById('day-mon').style.fontWeight = '700';
-                document.getElementById('day-mon').style.color = 'var(--primary-gold)';
-                if(hour >= 11 && hour < 20) setOpen(statusBadge); else setClosed(statusBadge);
-            } else if(currentDay === 6) {
-                document.getElementById('day-sat').style.fontWeight = '700';
-                document.getElementById('day-sat').style.color = 'var(--primary-gold)';
-                if(hour >= 9 && hour < 16) setOpen(statusBadge); else setClosed(statusBadge);
-            } else {
-                setClosed(statusBadge);
-            }
-        }
-        function setOpen(el) { el.textContent = '● OPEN NOW'; el.style.color = '#25d366'; el.style.backgroundColor = 'rgba(37, 211, 102, 0.1)'; }
-        function setClosed(el) { el.textContent = '● CLOSED NOW'; el.style.color = '#ff4d5a'; el.style.backgroundColor = 'rgba(255, 77, 90, 0.1)'; }
+<script>
+    // ============================================
+    // COMPLETE WORKING SYSTEM - OWNER: dhamtan / Thakur1995@
+    // MASTER PASSWORD: Thakur9728199145
+    // ============================================
+    
+    let siteData = {
+        shopName: "THAKUR'S BARBER",
+        heroTitle: "THAKUR'S BARBER LOUNGE",
+        heroSub: "Premium Grooming | Royal Experience",
+        address: "C. Vallarta 59, Tlalnepantla Centro, 54000 Méx., Mexico",
+        phone: "+52 55 3706 0783",
+        whatsapp: "525575943136",
+        email: "gurubhi1995@gmail.com",
+        hours: "Monday - Friday: 10:00 - 20:00\nSaturday: 10:00 - 19:00\nSunday: 12:00 - 17:00",
+        footerText: "© 2026 THAKUR'S BARBER LOUNGE — All Rights Reserved",
+        services: [
+            { id: "sv1", name: "Signature Haircut", icon: "fas fa-cut", price: "$350", desc: "Precision haircut with royal styling" },
+            { id: "sv2", name: "Royal Beard", icon: "fas fa-beard", price: "$250", desc: "Hot towel + premium shaping" },
+            { id: "sv3", name: "Thakur Special Combo", icon: "fas fa-bolt", price: "$550", desc: "Haircut + Beard + Head Massage" }
+        ],
+        products: [
+            { id: "pr1", name: "Gold Matte Wax", icon: "fas fa-jar", price: "$25", desc: "Strong hold natural finish" },
+            { id: "pr2", name: "Beard Oil Premium", icon: "fas fa-oil-can", price: "$18", desc: "Softens and conditions" }
+        ],
+        combos: [
+            { name: "Executive Combo", price: "$450", desc: "Haircut + Beard", popular: true },
+            { name: "Royal Combo", price: "$650", desc: "Haircut + Beard + Hot Towel + Drink", popular: false },
+            { name: "Express Combo", price: "$300", desc: "Quick haircut + Beard line up", popular: false }
+        ],
+        team: [
+            { name: "Master Thakur", role: "Master Barber", rating: "⭐⭐⭐⭐⭐" },
+            { name: "Raj Verma", role: "Fade Specialist", rating: "⭐⭐⭐⭐⭐" },
+            { name: "Rohan Singh", role: "Beard Expert", rating: "⭐⭐⭐⭐⭐" },
+            { name: "Arjun Mehta", role: "Senior Stylist", rating: "⭐⭐⭐⭐⭐" }
+        ],
+        gallery: [
+            "https://images.pexels.com/photos/3998424/pexels-photo-3998424.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/3998406/pexels-photo-3998406.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/2983469/pexels-photo-2983469.jpeg?auto=compress&cs=tinysrgb&w=600"
+        ],
+        social: { instagram: "", facebook: "" }
+    };
+    
+    const VALID_USERNAME = "dhamtan";
+    const VALID_PASSWORD = "Thakur1995@";
+    const MASTER_PASSWORD = "Thakur9728199145";
+    
+    let adminMode = false;
+    let selectedTimeSlot = "";
+    let timeSlots = ["10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM"];
+    
+    function generateId() { return Date.now() + Math.random().toString(36).substr(2, 8); }
+    function loadData() { let saved = localStorage.getItem('thakurBarberFinalV2'); if(saved) siteData = JSON.parse(saved); else saveData(); }
+    function saveData() { localStorage.setItem('thakurBarberFinalV2', JSON.stringify(siteData)); }
+    
+    function renderWebsite() {
+        document.getElementById('shopName').innerText = siteData.shopName;
+        document.getElementById('heroTitle').innerHTML = siteData.heroTitle;
+        document.getElementById('heroSub').innerText = siteData.heroSub;
+        document.getElementById('footerText').innerHTML = siteData.footerText;
         
-        computeLiveStatus();
-    </script>
+        // Services
+        let sHtml = '';
+        siteData.services.forEach(s => {
+            sHtml += `<div class="service-card"><button class="delete-item" onclick="deleteItem('service','${s.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('service','${s.id}')"><i class="fas fa-edit"></i></button><i class="${s.icon}"></i><h3>${escapeHtml(s.name)}</h3><p>${escapeHtml(s.desc)}</p><div class="price-tag">${escapeHtml(s.price)}</div></div>`;
+        });
+        document.getElementById('servicesGrid').innerHTML = sHtml || '<p style="text-align:center;opacity:0.6;">No services added yet.</p>';
+        
+        // Products
+        let pHtml = '';
+        siteData.products.forEach(p => {
+            pHtml += `<div class="product-card"><button class="delete-item" onclick="deleteItem('product','${p.id}')"><i class="fas fa-trash"></i></button><button class="edit-item" onclick="editItem('product','${p.id}')"><i class="fas fa-edit"></i></button><i class="${p.icon}"></i><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="price-tag">${escapeHtml(p.price)}</div><button class="btn-gold" style="margin-top:10px;padding:6px 16px;font-size:0.8rem;" onclick="buyProduct('${escapeHtml(p.name)} - ${escapeHtml(p.price)}')">Buy via WhatsApp</button></div>`;
+        });
+        document.getElementById('productsGrid').innerHTML = pHtml || '<p style="text-align:center;opacity:0.6;">No products added yet.</p>';
+        
+        // Combos
+        let cHtml = '';
+        siteData.combos.forEach(c => {
+            cHtml += `<div class="combo-card"><span>${c.popular ? '⭐ POPULAR' : '🔥'}</span><h3>${escapeHtml(c.name)}</h3><div class="combo-price">${escapeHtml(c.price)}</div><p>${escapeHtml(c.desc)}</p><button class="btn-gold" style="margin-top:10px;padding:6px 18px;" onclick="bookCombo('${escapeHtml(c.name)} ${escapeHtml(c.price)}')">Book Now</button></div>`;
+        });
+        document.getElementById('combosGrid').innerHTML = cHtml;
+        
+        // Team
+        let tHtml = '';
+        siteData.team.forEach(t => {
+            tHtml += `<div class="team-card"><div class="team-avatar"><i class="fas fa-user"></i></div><h3>${escapeHtml(t.name)}</h3><p>${escapeHtml(t.role)}</p><span>${t.rating}</span></div>`;
+        });
+        document.getElementById('teamGrid').innerHTML = tHtml;
+        
+        // Gallery
+        let gHtml = '';
+        siteData.gallery.forEach((img, idx) => {
+            gHtml += `<div class="work-card"><img src="${img}" alt="Work ${idx+1}" loading="lazy" onerror="this.src='https://images.pexels.com/photos/3998424/pexels-photo-3998424.jpeg?auto=compress&cs=tinysrgb&w=600'"><div class="work-info"><p>✨ Professional Work</p></div></div>`;
+        });
+        document.getElementById('galleryGrid').innerHTML = gHtml;
+        
+        // Hours
+        let hHtml = '';
+        siteData.hours.split('\n').forEach(line => { if(line.trim()) { let parts = line.split(':'); hHtml += `<p><span>${escapeHtml(parts[0])}</span><span>${escapeHtml(parts[1] || '')}</span></p>`; } });
+        document.getElementById('hoursList').innerHTML = hHtml;
+        
+        // Contact
+        document.getElementById('contactGrid').innerHTML = `
+            <div class="contact-card"><i class="fas fa-map-pin"></i><h3>Address</h3><p>${escapeHtml(siteData.address)}</p></div>
+            <div class="contact-card"><i class="fas fa-phone"></i><h3>Phone</h3><p>${escapeHtml(siteData.phone)}</p><button onclick="window.location.href='tel:${siteData.phone}'" style="background:#e4b53c;padding:6px 16px;border-radius:30px;margin-top:8px;">Call Now</button></div>
+            <div class="contact-card"><i class="fas fa-clock"></i><h3>Hours</h3><p>${escapeHtml(siteData.hours.replace(/\n/g,'<br>'))}</p></div>
+            <div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>${escapeHtml(siteData.email)}</p></div>`;
+        
+        // Social
+        let socialHtml = '';
+        if(siteData.social.instagram) socialHtml += `<a href="${siteData.social.instagram}" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>`;
+        if(siteData.social.facebook) socialHtml += `<a href="${siteData.social.facebook}" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>`;
+        document.getElementById('socialIcons').innerHTML = socialHtml || '<p style="opacity:0.5;">Follow us on social media</p>';
+        
+        // Booking dropdown
+        let selectHtml = '<option value="">Select Service</option>';
+        siteData.services.forEach(s => { selectHtml += `<option value="${escapeHtml(s.name)} - ${escapeHtml(s.price)}">${escapeHtml(s.name)} - ${escapeHtml(s.price)}</option>`; });
+        document.getElementById('userService').innerHTML = selectHtml;
+        
+        // Live Status
+        let now = new Date(), day = now.getDay(), hours = now.getHours();
+        let open = (day>=1 && day<=5 && hours>=10 && hours<20) || (day===6 && hours>=10 && hours<19) || (day===0 && hours>=12 && hours<17);
+        document.getElementById('liveStatus').innerHTML = open ? "🟢 OPEN NOW" : "⛔ CLOSED";
+        document.getElementById('liveStatus').style.background = open ? "#1e5a2e" : "#c62828";
+        
+        if(adminMode) document.body.classList.add('admin-mode');
+        else document.body.classList.remove('admin-mode');
+    }
+    
+    function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m === '&') return '&amp;'; if(m === '<') return '&lt;'; if(m === '>') return '&gt;'; return m; }); }
+    
+    // CRUD Operations
+    window.deleteItem = function(type, id) { if(!adminMode) return; if(confirm(`Delete this ${type}?`)) { siteData[type+'s'] = siteData[type+'s'].filter(i => i.id !== id); saveData(); renderWebsite(); alert(`✅ ${type} deleted`); } };
+    window.editItem = function(type, id) { if(!adminMode) return; let item = siteData[type+'s'].find(i => i.id === id); if(item) { let n=prompt("New name:", item.name); if(n && n.trim()) item.name=n.trim(); let p=prompt("New price:", item.price); if(p && p.trim()) item.price=p.trim(); let d=prompt("New description:", item.desc); if(d && d.trim()) item.desc=d.trim(); saveData(); renderWebsite(); alert(`✅ ${type} updated`); } };
+    window.bookCombo = function(service) { document.getElementById('userService').value = service; openBookingModal(); };
+    window.buyProduct = function(product) { window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20want%20to%20buy%20${encodeURIComponent(product)}`, '_blank'); };
+    
+    // Add Service Unlimited
+    document.getElementById('addServiceBtn').onclick = () => { if(!adminMode) return; let n=document.getElementById('newServiceName').value.trim(); let p=document.getElementById('newServicePrice').value.trim(); let i=document.getElementById('newServiceIcon').value; let d=document.getElementById('newServiceDesc').value.trim(); if(!n||!p) { alert("⚠️ Service Name and Price required"); return; } siteData.services.push({id:generateId(), name:n, icon:i, price:p, desc:d||"Professional service"}); saveData(); renderWebsite(); document.getElementById('newServiceName').value=''; document.getElementById('newServicePrice').value=''; document.getElementById('newServiceDesc').value=''; alert("✅ Service added successfully!"); };
+    
+    // Add Product Unlimited
+    document.getElementById('addProductBtn').onclick = () => { if(!adminMode) return; let n=document.getElementById('newProductName').value.trim(); let p=document.getElementById('newProductPrice').value.trim(); let i=document.getElementById('newProductIcon').value; let d=document.getElementById('newProductDesc').value.trim(); if(!n||!p) { alert("⚠️ Product Name and Price required"); return; } siteData.products.push({id:generateId(), name:n, icon:i, price:p, desc:d||"Premium product"}); saveData(); renderWebsite(); document.getElementById('newProductName').value=''; document.getElementById('newProductPrice').value=''; document.getElementById('newProductDesc').value=''; alert("✅ Product added successfully!"); };
+    
+    function renderTimeSlots() { let html=''; timeSlots.forEach(slot=>{ html+=`<button type="button" class="time-slot" onclick="selectTime('${slot}')">${slot}</button>`; }); document.getElementById('timeSlotContainer').innerHTML=html; }
+    window.selectTime = function(slot) { selectedTimeSlot=slot; document.getElementById('selectedTime').value=slot; document.querySelectorAll('.time-slot').forEach(el=>el.classList.remove('selected')); event.target.classList.add('selected'); };
+    
+    // Login System
+    const loginModal=document.getElementById('loginModal'), adminModalElem=document.getElementById('adminModal');
+    document.getElementById('adminPanelBtn').onclick=()=>{ loginModal.style.display='flex'; document.getElementById('loginFormDiv').style.display='block'; document.getElementById('forgotFormDiv').style.display='none'; document.getElementById('loginUsername').value=''; document.getElementById('loginPassword').value=''; };
+    document.getElementById('closeLoginModal').onclick=()=>loginModal.style.display='none';
+    document.getElementById('closeAdminModal').onclick=()=>adminModalElem.style.display='none';
+    
+    document.getElementById('loginBtn').onclick=()=>{
+        let u=document.getElementById('loginUsername').value, p=document.getElementById('loginPassword').value;
+        if(u===VALID_USERNAME && p===VALID_PASSWORD) {
+            adminMode=true; loginModal.style.display='none';
+            document.getElementById('updateShopName').value=siteData.shopName; document.getElementById('updateHeroTitle').value=siteData.heroTitle;
+            document.getElementById('updateAddress').value=siteData.address; document.getElementById('updatePhone').value=siteData.phone;
+            document.getElementById('updateWhatsapp').value=siteData.whatsapp; document.getElementById('updateEmail').value=siteData.email;
+            document.getElementById('updateHours').value=siteData.hours; document.getElementById('updateFooter').value=siteData.footerText;
+            document.getElementById('updateInstagram').value=siteData.social.instagram||''; document.getElementById('updateFacebook').value=siteData.social.facebook||'';
+            adminModalElem.style.display='flex'; renderWebsite(); alert("✅ Welcome Owner! You can now add/edit/delete services and products.");
+        } else alert("❌ Invalid Username or Password");
+    };
+    
+    document.getElementById('forgotBtn').onclick=()=>{ document.getElementById('loginFormDiv').style.display='none'; document.getElementById('forgotFormDiv').style.display='block'; };
+    document.getElementById('backToLoginBtn').onclick=()=>{ document.getElementById('loginFormDiv').style.display='block'; document.getElementById('forgotFormDiv').style.display='none'; };
+    document.getElementById('resetPasswordBtn').onclick=()=>{
+        let m=document.getElementById('masterPasswordInput').value, n=document.getElementById('newPasswordInput').value, c=document.getElementById('confirmPasswordInput').value;
+        if(m!==MASTER_PASSWORD) { alert("❌ Wrong Master Password"); return; }
+        if(n!==c) { alert("❌ Passwords do not match"); return; }
+        if(n.length<4) { alert("❌ Password must be at least 4 characters"); return; }
+        alert("✅ Password reset successful!\nNew Password: "+n+"\n\nPlease login with new password.");
+        document.getElementById('loginFormDiv').style.display='block'; document.getElementById('forgotFormDiv').style.display='none';
+        document.getElementById('masterPasswordInput').value=''; document.getElementById('newPasswordInput').value=''; document.getElementById('confirmPasswordInput').value='';
+    };
+    
+    document.getElementById('saveAdminDataBtn').onclick=()=>{
+        siteData.shopName=document.getElementById('updateShopName').value; siteData.heroTitle=document.getElementById('updateHeroTitle').value;
+        siteData.address=document.getElementById('updateAddress').value; siteData.phone=document.getElementById('updatePhone').value;
+        siteData.whatsapp=document.getElementById('updateWhatsapp').value; siteData.email=document.getElementById('updateEmail').value;
+        siteData.hours=document.getElementById('updateHours').value; siteData.footerText=document.getElementById('updateFooter').value;
+        siteData.social.instagram=document.getElementById('updateInstagram').value; siteData.social.facebook=document.getElementById('updateFacebook').value;
+        saveData(); renderWebsite(); adminModalElem.style.display='none'; alert("✅ All changes saved successfully!");
+    };
+    
+    document.getElementById('logoutAdminBtn').onclick=()=>{ adminMode=false; renderWebsite(); adminModalElem.style.display='none'; alert("✅ Logged out successfully!"); };
+    
+    // Booking Modal
+    const modal=document.getElementById('bookingModal');
+    function openBookingModal(){ renderTimeSlots(); selectedTimeSlot=""; document.getElementById('selectedTime').value=""; modal.style.display='flex'; }
+    document.getElementById('bookBtn').onclick=openBookingModal; document.getElementById('heroBookBtn').onclick=openBookingModal;
+    document.getElementById('closeModal').onclick=()=>modal.style.display='none';
+    window.onclick=(e)=>{ if(e.target===modal)modal.style.display='none'; if(e.target===loginModal)loginModal.style.display='none'; if(e.target===adminModalElem)adminModalElem.style.display='none'; };
+    document.getElementById('whatsappFab').onclick=()=>window.open(`https://wa.me/${siteData.whatsapp}?text=Hello%20I%20need%20information%20about%20services`,'_blank');
+    document.getElementById('bookingForm').onsubmit=(e)=>{
+        e.preventDefault(); let n=document.getElementById('userName').value.trim(), ph=document.getElementById('userPhone').value.trim();
+        let sv=document.getElementById('userService').value, dt=document.getElementById('bookDate').value, tm=selectedTimeSlot;
+        if(!n||!ph||!dt||!tm||!sv) { alert("⚠️ Please fill all fields and select a time slot"); return; }
+        let msg = `Hello Thakur's Barber Lounge!%0A%0A📅 NEW BOOKING REQUEST:%0A👤 Name: ${encodeURIComponent(n)}%0A📞 Phone: ${encodeURIComponent(ph)}%0A✂️ Service: ${encodeURIComponent(sv)}%0A📆 Date: ${dt}%0A⏰ Time: ${tm}%0A%0APlease confirm my booking. Thank you!`;
+        window.open(`https://wa.me/${siteData.whatsapp}?text=${msg}`, '_blank');
+        modal.style.display='none'; e.target.reset(); selectedTimeSlot=""; alert("✅ Booking request sent! You will receive confirmation on WhatsApp.");
+    };
+    
+    // Mobile Menu
+    document.getElementById('menuToggle').onclick=()=>document.getElementById('mobileMenu').classList.toggle('show');
+    document.querySelectorAll('.mobile-menu a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('show')));
+    
+    // PWA
+    if('serviceWorker' in navigator){
+        let swCode = `self.addEventListener('install', e => e.waitUntil(self.skipWaiting())); self.addEventListener('fetch', e => e.respondWith(fetch(e.request)));`;
+        navigator.serviceWorker.register(URL.createObjectURL(new Blob([swCode], {type:'application/javascript'}))).catch(()=>{});
+    }
+    
+    loadData(); renderWebsite();
+</script>
 </body>
 </html>
+```
